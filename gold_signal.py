@@ -6,6 +6,10 @@ automatically log the signal to trade_journal.csv, and prevent whipsaw spam.
 Phase A filters:
   - Session window (default 07:00–21:00 UTC = London + NY)
   - ATR volatility filter (skip dead or chaotic bars)
+
+Anti-flip:
+  - Min 30 minutes between any alerts
+  - Min 60 minutes before an opposite-direction alert (BUY↔SELL)
 """
 
 import os
@@ -44,16 +48,19 @@ RSI_OVERSOLD = 30
 SL_ATR_MULT = 1.5
 TP_ATR_MULT = 2.5
 MAX_RISK_WARNING_PCT = 3.0
-COOLDOWN_MINUTES = 15
+
+# --- Anti-whipsaw / anti-flip ---
+COOLDOWN_MINUTES = 30              # min minutes between any two alerts
+OPPOSITE_COOLDOWN_MINUTES = 60     # min minutes before allowing opposite direction
 
 # --- Phase A filters ---
-SESSION_START_UTC = 7          # 07:00 UTC (approx London open)
-SESSION_END_UTC = 21           # 21:00 UTC (approx NY close)
+SESSION_START_UTC = 7
+SESSION_END_UTC = 21
 USE_SESSION_FILTER = True
 
-ATR_LOOKBACK = 100             # bars for ATR percentile
-ATR_MIN_PCT = 20               # skip if ATR below this percentile (too quiet)
-ATR_MAX_PCT = 95               # skip if ATR above this percentile (too chaotic)
+ATR_LOOKBACK = 100
+ATR_MIN_PCT = 20
+ATR_MAX_PCT = 95
 USE_ATR_FILTER = True
 
 
@@ -103,12 +110,10 @@ def add_indicators(df):
     pv = typical * volume
     df["vwap"] = pv.groupby(day).cumsum() / volume.groupby(day).cumsum()
 
-    # Rolling ATR percentiles for volatility filter
     df["atr_pctl"] = df["atr"].rolling(ATR_LOOKBACK, min_periods=20).apply(
         lambda x: (x[-1] <= x).mean() * 100 if len(x) else np.nan,
         raw=True,
     )
-
     return df
 
 
@@ -123,7 +128,7 @@ def atr_ok(atr_pctl) -> bool:
     if not USE_ATR_FILTER:
         return True
     if pd.isna(atr_pctl):
-        return True  # not enough history yet — allow
+        return True
     return ATR_MIN_PCT <= float(atr_pctl) <= ATR_MAX_PCT
 
 
@@ -131,7 +136,6 @@ def evaluate(df, mode="strict"):
     last = df.iloc[-1]
     prev = df.iloc[-2]
 
-    # Phase A filters
     session_ok = in_session(last["ts"])
     vol_ok = atr_ok(last.get("atr_pctl"))
 
@@ -160,7 +164,6 @@ def evaluate(df, mode="strict"):
         buy = trend_up and rsi_ok_buy and last["rsi"] > 50
         sell = trend_down and rsi_ok_sell and last["rsi"] < 50
 
-    # Apply Phase A filters
     if filter_reason:
         buy = sell = False
 
@@ -211,7 +214,11 @@ def load_state():
                 return json.load(f)
         except (json.JSONDecodeError, OSError):
             pass
-    return {"last_signal_ts": None, "last_bias": None}
+    return {
+        "last_signal_ts": None,
+        "last_bias": None,
+        "last_alert_wall_ts": None,
+    }
 
 
 def save_state(state):
@@ -219,6 +226,78 @@ def save_state(state):
     with open(tmp_path, "w") as f:
         json.dump(state, f, indent=2)
     os.replace(tmp_path, STATE_FILE)
+
+
+def parse_iso_utc(s):
+    if not s:
+        return None
+    s = str(s).strip()
+    for fmt in ("%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%dT%H:%M:%S%z", "%Y-%m-%d %H:%M:%S%z"):
+        try:
+            dt = datetime.strptime(s.replace("+0000", "+00:00"), fmt)
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+            return dt
+        except ValueError:
+            continue
+    try:
+        return pd.to_datetime(s, utc=True).to_pydatetime()
+    except Exception:
+        return None
+
+
+def minutes_between(a, b):
+    if a is None or b is None:
+        return None
+    return (b - a).total_seconds() / 60.0
+
+
+def should_suppress(r, state):
+    """
+    Returns (suppress: bool, reason: str|None).
+    Blocks:
+      1) Any alert within COOLDOWN_MINUTES (wall clock + candle time)
+      2) Opposite direction within OPPOSITE_COOLDOWN_MINUTES
+    """
+    now = datetime.now(timezone.utc)
+    current_candle = r["ts"].to_pydatetime()
+    if current_candle.tzinfo is None:
+        current_candle = current_candle.replace(tzinfo=timezone.utc)
+
+    last_bias = state.get("last_bias")
+    last_candle = parse_iso_utc(state.get("last_signal_ts"))
+    last_wall = parse_iso_utc(state.get("last_alert_wall_ts"))
+
+    # Prefer wall-clock for real alert spacing (stops 5-min Telegram flips)
+    mins_wall = minutes_between(last_wall, now)
+    mins_candle = minutes_between(last_candle, current_candle)
+
+    # Effective minutes since last alert
+    mins = None
+    if mins_wall is not None and mins_candle is not None:
+        mins = min(mins_wall, mins_candle)  # stricter
+    elif mins_wall is not None:
+        mins = mins_wall
+    elif mins_candle is not None:
+        mins = mins_candle
+
+    if mins is not None and mins < COOLDOWN_MINUTES:
+        return True, f"cooldown ({mins:.1f}m since last alert, need {COOLDOWN_MINUTES}m)"
+
+    # Opposite direction lock
+    if (
+        last_bias in ("BUY", "SELL")
+        and r["bias"] in ("BUY", "SELL")
+        and r["bias"] != last_bias
+        and mins is not None
+        and mins < OPPOSITE_COOLDOWN_MINUTES
+    ):
+        return True, (
+            f"opposite lock ({last_bias}→{r['bias']}, {mins:.1f}m ago, "
+            f"need {OPPOSITE_COOLDOWN_MINUTES}m)"
+        )
+
+    return False, None
 
 
 def log_to_csv(r):
@@ -319,45 +398,34 @@ def main():
 
     state = load_state()
 
-    if r["bias"] != "NONE":
-        last_signal_ts_str = state.get("last_signal_ts")
-        if last_signal_ts_str:
-            try:
-                last_time = datetime.strptime(
-                    last_signal_ts_str, "%Y-%m-%dT%H:%M:%SZ"
-                ).replace(tzinfo=timezone.utc)
-                current_time = r["ts"].to_pydatetime()
-                if current_time.tzinfo is None:
-                    current_time = current_time.replace(tzinfo=timezone.utc)
+    if r["bias"] == "NONE":
+        # Do NOT clear last_bias — needed for opposite-direction lock
+        return
 
-                minutes_since_last = (current_time - last_time).total_seconds() / 60
+    suppress, reason = should_suppress(r, state)
+    if suppress:
+        print(f"\n[INFO] Alert suppressed: {reason}")
+        return
 
-                if minutes_since_last < COOLDOWN_MINUTES:
-                    print(
-                        f"\n[INFO] Cooldown active ({minutes_since_last:.1f} mins since last signal). "
-                        f"Suppressing to avoid whipsaw."
-                    )
-                    state["last_bias"] = r["bias"]
-                    save_state(state)
-                    sys.exit(0)
-            except (ValueError, TypeError) as e:
-                print(f"[WARN] Could not parse last signal time: {e}")
+    current_ts_str = (
+        r["ts"].strftime("%Y-%m-%dT%H:%M:%SZ")
+        if hasattr(r["ts"], "strftime")
+        else str(r["ts"])
+    )
 
-        current_ts_str = r["ts"].strftime("%Y-%m-%dT%H:%M:%SZ") if hasattr(r["ts"], "strftime") else str(r["ts"])
-        if current_ts_str != state.get("last_signal_ts") or r["bias"] != state.get("last_bias"):
-            print("\n[INFO] New signal detected! Sending Telegram & Logging to CSV...")
-            send_telegram(r)
-            log_to_csv(r)
+    # Same candle already alerted
+    if current_ts_str == state.get("last_signal_ts") and r["bias"] == state.get("last_bias"):
+        print("\n[INFO] Signal already sent/logged for this candle.")
+        return
 
-            state["last_signal_ts"] = current_ts_str
-            state["last_bias"] = r["bias"]
-            save_state(state)
-        else:
-            print("\n[INFO] Signal already sent/logged for this candle.")
-    else:
-        if state.get("last_bias") is not None:
-            state["last_bias"] = None
-            save_state(state)
+    print("\n[INFO] New signal detected! Sending Telegram & Logging to CSV...")
+    send_telegram(r)
+    log_to_csv(r)
+
+    state["last_signal_ts"] = current_ts_str
+    state["last_bias"] = r["bias"]
+    state["last_alert_wall_ts"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    save_state(state)
 
 
 if __name__ == "__main__":
