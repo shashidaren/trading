@@ -386,3 +386,4 @@
 [2026-08-27T01:25:03.277550+00:00] upserted 20 candles. Latest: 2026-08-27T01:20:00Z  close=4622.86698
 [2026-08-27T01:30:02.273322+00:00] upserted 20 candles. Latest: 2026-08-27T01:25:00Z  close=4621.03676
 [2026-08-27T01:35:02.206849+00:00] upserted 20 candles. Latest: 2026-08-27T01:30:00Z  close=4621.28717
+ERROR: TWELVE_DATA_API_KEY not found. Please set it in /opt/gold/.env
