@@ -1,56 +1,75 @@
-# Gold (XAU/USD) 5m On-Demand Signal
+# Gold (XAU/USD) 5m Signal System
 
-Two scripts, meant to run on `bitcoin:/opt/gold`:
+Simple on-demand signal helper for gold.  
+Gives you BUY / SELL / NONE reads with ATR-based SL/TP, sends Telegram alerts, and logs every signal so you can track accuracy over time.
 
-- `collector.py` — pulls 5-minute XAU/USD candles from Twelve Data into a
-  local SQLite file `gold_data.db`. Safe to re-run; upserts by timestamp.
-- `gold_signal.py` — reads the DB, computes EMA9/21, RSI14, ATR14, session VWAP,
-  and prints a BUY / SELL / NONE read with ATR-based SL/TP for a quick
-  manual entry decision.
+## Files
+
+| File | Purpose |
+|------|---------|
+| `collector.py` | Pulls 5-minute XAU/USD candles from Twelve Data → `gold_data.db` |
+| `gold_signal.py` | Calculates indicators, generates signal, Telegram + journal logging |
+| `analyze_trades.py` | Performance report from `trade_journal.csv` |
+| `trade_journal.csv` | Auto-created log of every signal (you mark WIN/LOSS later) |
+| `.env` | Your secrets (never commit this) |
 
 ## Setup
 
 ```bash
-cd /opt/gold
+cd /opt/gold          # or wherever you cloned the repo
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-export TWELVE_DATA_API_KEY="your_key_here"   # or put it in your shell profile
 ```
 
-## First run (backfill history)
+Create a `.env` file:
+
+```env
+TWELVE_DATA_API_KEY=your_key_here
+TELEGRAM_BOT_TOKEN=your_bot_token
+TELEGRAM_CHAT_ID=your_chat_id
+```
+
+## Daily usage
+
+```bash
+# 1. Update candles
+python3 collector.py
+
+# 2. Get signal (strict = fresh EMA cross only)
+python3 gold_signal.py
+
+# or more signals (in-trend + RSI)
+python3 gold_signal.py --mode relaxed
+```
+
+## Tracking accuracy
+
+Every time a real signal fires it is appended to `trade_journal.csv` with `Outcome = PENDING`.
+
+After the trade finishes:
+
+1. Open `trade_journal.csv`
+2. Change `Outcome` to `WIN`, `LOSS` or `BE`
+3. (Optional) fill `R_Multiple` (e.g. `1.67` if you hit full 2.5 ATR target against 1.5 ATR risk)
+4. Run:
+
+```bash
+python3 analyze_trades.py
+```
+
+You will see win rate, average R, expectancy, breakdown by mode and direction.
+
+## Notes
+
+- **Rate limits**: Twelve Data free tier is limited. `collector.py` does one request per run — fine for on-demand use.
+- **Volume / VWAP**: Spot XAU/USD often has blank volume. VWAP confirmation is skipped when volume is missing.
+- **Risk numbers**: Adjust `ACCOUNT_BALANCE`, `LOT_SIZE` and `DOLLAR_PER_POINT` at the top of `gold_signal.py` to match your broker.
+- **Cooldown**: Default 15 minutes between signals to reduce whipsaw spam.
+
+## First-time backfill
 
 ```bash
 python3 collector.py --backfill 500
 python3 gold_signal.py
 ```
-
-## On-demand use from then on
-
-```bash
-python3 collector.py   # top up latest bars
-python3 gold_signal.py       # get current read
-# or, looser trend-following rule instead of fresh EMA-cross only:
-python3 gold_signal.py --mode relaxed
-```
-
-## Notes / things to tune
-
-- **Rate limits**: Twelve Data's free tier is typically 8 requests/minute,
-  800/day. `collector.py` does one request per run — fine for on-demand use,
-  but don't cron it every few seconds.
-- **Volume**: Twelve Data's spot XAU/USD feed sometimes reports 0/blank
-  volume (it's an OTC-style spot instrument, not an exchange feed) — VWAP
-  will fall back to `n/a` in that case and the confluence check just skips
-  it. If you want real volume-based VWAP, point `SYMBOL` in `collector.py`
-  at `GC=F`-style futures feeds instead.
-- **SL/TP multiples** (`SL_ATR_MULT`, `TP_ATR_MULT` in `gold_signal.py`) are a
-  starting point (1.5x / 2.5x ATR ≈ 1:1.67 R:R). Tune against your broker's
-  typical spread on gold — if spread eats a big chunk of a 1.5×ATR stop on
-  5m bars, widen it.
-- **`strict` vs `relaxed` mode**: `strict` only fires right on a fresh
-  EMA9/21 cross (fewer, more precise signals). `relaxed` fires anytime
-  you're in-trend with RSI confirming (more signals, more noise) — better
-  suited to "check in every 15–30 min and see if there's a trade" usage.
-- This is a **manual-trade decision aid**, not an execution bot — nothing
-  here places orders. You still pull the trigger in Moomoo/your broker.
