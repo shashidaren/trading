@@ -1,0 +1,4485 @@
+==================================================
+ XAU/USD 5m read — 2026-08-25 17:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4642.55
+ EMA9/21   : 4640.31 / 4641.05
+ RSI14     : 52.6
+ ATR14     : 4.75
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 17:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4643.89
+ EMA9/21   : 4641.02 / 4641.31
+ RSI14     : 54.4
+ ATR14     : 4.55
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 17:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4645.52
+ EMA9/21   : 4641.79 / 4641.63
+ RSI14     : 56.6
+ ATR14     : 4.42
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : BUY
+ Entry ~   : 4645.52
+ SL        : 4638.89
+ TP        : 4656.58
+ R:R       : 1:1.67
+--------------------------------------------------
+ RISK      : $6.63 (6.6% of $100.0 acct)
+ ⚠️ WARNING: Risk exceeds safe threshold for this account size!
+==================================================
+
+[INFO] New signal detected! Sending Telegram alert...
+[INFO] Telegram alert sent successfully.
+Traceback (most recent call last):
+  File "/opt/gold/gold_signal.py", line 259, in <module>
+    main()
+  File "/opt/gold/gold_signal.py", line 248, in main
+    save_state(state)
+  File "/opt/gold/gold_signal.py", line 164, in save_state
+    json.dump(state, f)
+  File "/usr/lib/python3.11/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/usr/lib/python3.11/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.11/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Timestamp is not JSON serializable
+==================================================
+ XAU/USD 5m read — 2026-08-25 17:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4643.55
+ EMA9/21   : 4642.20 / 4641.83
+ RSI14     : 53.2
+ ATR14     : 4.38
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+Traceback (most recent call last):
+  File "/opt/gold/gold_signal.py", line 259, in <module>
+    main()
+  File "/opt/gold/gold_signal.py", line 237, in main
+    state = load_state()
+            ^^^^^^^^^^^^
+  File "/opt/gold/gold_signal.py", line 159, in load_state
+    return json.load(f)
+           ^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 20 (char 19)
+==================================================
+ XAU/USD 5m read — 2026-08-25 17:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4646.90
+ EMA9/21   : 4642.94 / 4642.19
+ RSI14     : 57.3
+ ATR14     : 4.45
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+Traceback (most recent call last):
+  File "/opt/gold/gold_signal.py", line 259, in <module>
+    main()
+  File "/opt/gold/gold_signal.py", line 237, in main
+    state = load_state()
+            ^^^^^^^^^^^^
+  File "/opt/gold/gold_signal.py", line 159, in load_state
+    return json.load(f)
+           ^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 20 (char 19)
+==================================================
+ XAU/USD 5m read — 2026-08-25 18:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4645.64
+ EMA9/21   : 4643.61 / 4642.57
+ RSI14     : 55.0
+ ATR14     : 4.42
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+Traceback (most recent call last):
+  File "/opt/gold/gold_signal.py", line 259, in <module>
+    main()
+  File "/opt/gold/gold_signal.py", line 237, in main
+    state = load_state()
+            ^^^^^^^^^^^^
+  File "/opt/gold/gold_signal.py", line 159, in load_state
+    return json.load(f)
+           ^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 20 (char 19)
+==================================================
+ XAU/USD 5m read — 2026-08-25 18:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4647.20
+ EMA9/21   : 4644.29 / 4642.97
+ RSI14     : 56.8
+ ATR14     : 4.32
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+Traceback (most recent call last):
+  File "/opt/gold/gold_signal.py", line 259, in <module>
+    main()
+  File "/opt/gold/gold_signal.py", line 237, in main
+    state = load_state()
+            ^^^^^^^^^^^^
+  File "/opt/gold/gold_signal.py", line 159, in load_state
+    return json.load(f)
+           ^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 20 (char 19)
+==================================================
+ XAU/USD 5m read — 2026-08-25 18:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4650.16
+ EMA9/21   : 4645.49 / 4643.64
+ RSI14     : 60.2
+ ATR14     : 4.34
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+Traceback (most recent call last):
+  File "/opt/gold/gold_signal.py", line 259, in <module>
+    main()
+  File "/opt/gold/gold_signal.py", line 237, in main
+    state = load_state()
+            ^^^^^^^^^^^^
+  File "/opt/gold/gold_signal.py", line 159, in load_state
+    return json.load(f)
+           ^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 20 (char 19)
+==================================================
+ XAU/USD 5m read — 2026-08-25 18:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4647.89
+ EMA9/21   : 4645.46 / 4643.76
+ RSI14     : 57.5
+ ATR14     : 4.10
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+Traceback (most recent call last):
+  File "/opt/gold/gold_signal.py", line 259, in <module>
+    main()
+  File "/opt/gold/gold_signal.py", line 237, in main
+    state = load_state()
+            ^^^^^^^^^^^^
+  File "/opt/gold/gold_signal.py", line 159, in load_state
+    return json.load(f)
+           ^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 20 (char 19)
+==================================================
+ XAU/USD 5m read — 2026-08-25 18:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4649.38
+ EMA9/21   : 4646.07 / 4644.18
+ RSI14     : 59.5
+ ATR14     : 4.04
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+Traceback (most recent call last):
+  File "/opt/gold/gold_signal.py", line 259, in <module>
+    main()
+  File "/opt/gold/gold_signal.py", line 237, in main
+    state = load_state()
+            ^^^^^^^^^^^^
+  File "/opt/gold/gold_signal.py", line 159, in load_state
+    return json.load(f)
+           ^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 20 (char 19)
+==================================================
+ XAU/USD 5m read — 2026-08-25 18:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4649.34
+ EMA9/21   : 4646.66 / 4644.62
+ RSI14     : 59.4
+ ATR14     : 3.88
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+Traceback (most recent call last):
+  File "/opt/gold/gold_signal.py", line 259, in <module>
+    main()
+  File "/opt/gold/gold_signal.py", line 237, in main
+    state = load_state()
+            ^^^^^^^^^^^^
+  File "/opt/gold/gold_signal.py", line 159, in load_state
+    return json.load(f)
+           ^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 20 (char 19)
+==================================================
+ XAU/USD 5m read — 2026-08-25 18:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4647.19
+ EMA9/21   : 4646.86 / 4644.90
+ RSI14     : 55.1
+ ATR14     : 3.82
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+Traceback (most recent call last):
+  File "/opt/gold/gold_signal.py", line 259, in <module>
+    main()
+  File "/opt/gold/gold_signal.py", line 237, in main
+    state = load_state()
+            ^^^^^^^^^^^^
+  File "/opt/gold/gold_signal.py", line 159, in load_state
+    return json.load(f)
+           ^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 20 (char 19)
+==================================================
+ XAU/USD 5m read — 2026-08-25 18:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4646.88
+ EMA9/21   : 4646.79 / 4645.04
+ RSI14     : 54.5
+ ATR14     : 3.70
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+Traceback (most recent call last):
+  File "/opt/gold/gold_signal.py", line 259, in <module>
+    main()
+  File "/opt/gold/gold_signal.py", line 237, in main
+    state = load_state()
+            ^^^^^^^^^^^^
+  File "/opt/gold/gold_signal.py", line 159, in load_state
+    return json.load(f)
+           ^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 20 (char 19)
+==================================================
+ XAU/USD 5m read — 2026-08-25 18:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4649.83
+ EMA9/21   : 4647.62 / 4645.59
+ RSI14     : 58.7
+ ATR14     : 3.69
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+Traceback (most recent call last):
+  File "/opt/gold/gold_signal.py", line 259, in <module>
+    main()
+  File "/opt/gold/gold_signal.py", line 237, in main
+    state = load_state()
+            ^^^^^^^^^^^^
+  File "/opt/gold/gold_signal.py", line 159, in load_state
+    return json.load(f)
+           ^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 20 (char 19)
+==================================================
+ XAU/USD 5m read — 2026-08-25 18:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4651.74
+ EMA9/21   : 4648.50 / 4646.18
+ RSI14     : 61.3
+ ATR14     : 3.63
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 18:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4650.81
+ EMA9/21   : 4649.00 / 4646.62
+ RSI14     : 59.2
+ ATR14     : 3.51
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 18:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4653.19
+ EMA9/21   : 4649.80 / 4647.20
+ RSI14     : 62.2
+ ATR14     : 3.47
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 19:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4655.76
+ EMA9/21   : 4651.19 / 4648.08
+ RSI14     : 65.3
+ ATR14     : 3.60
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 19:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4659.05
+ EMA9/21   : 4652.57 / 4648.98
+ RSI14     : 68.9
+ ATR14     : 3.77
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 19:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4661.17
+ EMA9/21   : 4654.47 / 4650.18
+ RSI14     : 70.9
+ ATR14     : 3.78
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 19:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4661.17
+ EMA9/21   : 4654.47 / 4650.18
+ RSI14     : 70.9
+ ATR14     : 3.78
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 19:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4664.69
+ EMA9/21   : 4658.29 / 4652.76
+ RSI14     : 72.1
+ ATR14     : 3.92
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 19:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4660.57
+ EMA9/21   : 4658.61 / 4653.40
+ RSI14     : 63.7
+ ATR14     : 4.00
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 19:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4661.25
+ EMA9/21   : 4659.23 / 4654.16
+ RSI14     : 64.9
+ ATR14     : 3.78
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 19:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4658.66
+ EMA9/21   : 4658.88 / 4654.45
+ RSI14     : 59.9
+ ATR14     : 3.84
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 19:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4661.23
+ EMA9/21   : 4659.47 / 4655.13
+ RSI14     : 63.6
+ ATR14     : 3.75
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 19:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4661.82
+ EMA9/21   : 4660.20 / 4655.87
+ RSI14     : 63.3
+ ATR14     : 3.85
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 19:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4664.20
+ EMA9/21   : 4661.16 / 4656.71
+ RSI14     : 67.0
+ ATR14     : 3.90
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 19:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4665.19
+ EMA9/21   : 4662.44 / 4657.73
+ RSI14     : 65.7
+ ATR14     : 4.03
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 20:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4665.60
+ EMA9/21   : 4663.29 / 4658.56
+ RSI14     : 66.4
+ ATR14     : 3.93
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 20:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4663.23
+ EMA9/21   : 4663.32 / 4659.00
+ RSI14     : 61.1
+ ATR14     : 3.86
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 20:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4667.32
+ EMA9/21   : 4664.58 / 4660.00
+ RSI14     : 68.8
+ ATR14     : 3.91
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 20:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4665.77
+ EMA9/21   : 4664.75 / 4660.49
+ RSI14     : 65.2
+ ATR14     : 3.73
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 20:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4667.03
+ EMA9/21   : 4665.26 / 4661.11
+ RSI14     : 67.4
+ ATR14     : 3.55
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 20:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4662.88
+ EMA9/21   : 4664.84 / 4661.30
+ RSI14     : 56.7
+ ATR14     : 3.68
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 20:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4663.62
+ EMA9/21   : 4664.54 / 4661.48
+ RSI14     : 57.8
+ ATR14     : 3.54
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 20:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4661.73
+ EMA9/21   : 4663.86 / 4661.44
+ RSI14     : 54.0
+ ATR14     : 3.39
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 20:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4661.25
+ EMA9/21   : 4663.38 / 4661.45
+ RSI14     : 52.9
+ ATR14     : 3.26
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 20:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4662.38
+ EMA9/21   : 4663.14 / 4661.51
+ RSI14     : 55.1
+ ATR14     : 3.14
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 20:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4659.66
+ EMA9/21   : 4662.22 / 4661.23
+ RSI14     : 49.2
+ ATR14     : 3.05
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 20:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4659.15
+ EMA9/21   : 4661.78 / 4661.13
+ RSI14     : 47.8
+ ATR14     : 3.03
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 21:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4658.70
+ EMA9/21   : 4661.08 / 4660.87
+ RSI14     : 46.9
+ ATR14     : 2.86
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 21:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4658.55
+ EMA9/21   : 4660.57 / 4660.65
+ RSI14     : 46.5
+ ATR14     : 2.68
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : SELL
+ Entry ~   : 4658.55
+ SL        : 4662.57
+ TP        : 4651.85
+ R:R       : 1:1.67
+--------------------------------------------------
+ RISK      : $4.02 (4.0% of $100.0 acct)
+ ⚠️ WARNING: Risk exceeds safe threshold for this account size!
+==================================================
+
+[INFO] New signal detected! Sending Telegram alert...
+[INFO] Telegram alert sent successfully.
+Traceback (most recent call last):
+  File "/opt/gold/gold_signal.py", line 262, in <module>
+    main()
+  File "/opt/gold/gold_signal.py", line 251, in main
+    save_state(state)
+  File "/opt/gold/gold_signal.py", line 165, in save_state
+    json.dump(state, f)
+  File "/usr/lib/python3.11/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/usr/lib/python3.11/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.11/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Timestamp is not JSON serializable
+==================================================
+ XAU/USD 5m read — 2026-08-25 21:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4658.62
+ EMA9/21   : 4660.21 / 4660.48
+ RSI14     : 46.7
+ ATR14     : 2.51
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 21:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4658.71
+ EMA9/21   : 4659.91 / 4660.32
+ RSI14     : 47.0
+ ATR14     : 2.35
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 21:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4658.71
+ EMA9/21   : 4659.65 / 4660.16
+ RSI14     : 47.0
+ ATR14     : 2.20
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 21:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4658.80
+ EMA9/21   : 4659.47 / 4660.04
+ RSI14     : 47.4
+ ATR14     : 2.07
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 21:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4658.74
+ EMA9/21   : 4659.32 / 4659.92
+ RSI14     : 47.2
+ ATR14     : 1.95
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 21:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4658.83
+ EMA9/21   : 4659.19 / 4659.80
+ RSI14     : 47.6
+ ATR14     : 1.83
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 21:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4658.71
+ EMA9/21   : 4659.05 / 4659.68
+ RSI14     : 47.2
+ ATR14     : 1.72
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 21:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4658.77
+ EMA9/21   : 4658.98 / 4659.59
+ RSI14     : 47.6
+ ATR14     : 1.62
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 21:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4658.53
+ EMA9/21   : 4658.89 / 4659.49
+ RSI14     : 46.5
+ ATR14     : 1.55
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 21:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4658.40
+ EMA9/21   : 4658.79 / 4659.39
+ RSI14     : 45.8
+ ATR14     : 1.46
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 22:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4660.53
+ EMA9/21   : 4659.13 / 4659.49
+ RSI14     : 56.0
+ ATR14     : 1.78
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 22:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4660.75
+ EMA9/21   : 4659.52 / 4659.64
+ RSI14     : 56.5
+ ATR14     : 1.70
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 22:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4662.47
+ EMA9/21   : 4660.20 / 4659.94
+ RSI14     : 62.9
+ ATR14     : 1.73
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : BUY
+ Entry ~   : 4662.47
+ SL        : 4659.86
+ TP        : 4666.80
+ R:R       : 1:1.67
+--------------------------------------------------
+ RISK      : $2.60 (2.6% of $100.0 acct)
+==================================================
+
+[INFO] New signal detected! Sending Telegram alert...
+[INFO] Telegram alert sent successfully.
+Traceback (most recent call last):
+  File "/opt/gold/gold_signal.py", line 262, in <module>
+    main()
+  File "/opt/gold/gold_signal.py", line 251, in main
+    save_state(state)
+  File "/opt/gold/gold_signal.py", line 165, in save_state
+    json.dump(state, f)
+  File "/usr/lib/python3.11/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/usr/lib/python3.11/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.11/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Timestamp is not JSON serializable
+==================================================
+ XAU/USD 5m read — 2026-08-25 22:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4666.21
+ EMA9/21   : 4661.60 / 4660.61
+ RSI14     : 72.2
+ ATR14     : 1.97
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 22:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4665.77
+ EMA9/21   : 4662.48 / 4661.11
+ RSI14     : 69.1
+ ATR14     : 1.95
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 22:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4666.62
+ EMA9/21   : 4663.48 / 4661.70
+ RSI14     : 72.2
+ ATR14     : 1.90
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 22:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4667.19
+ EMA9/21   : 4664.24 / 4662.21
+ RSI14     : 73.7
+ ATR14     : 1.94
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 22:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4670.22
+ EMA9/21   : 4665.63 / 4663.03
+ RSI14     : 79.0
+ ATR14     : 1.99
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 22:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4669.45
+ EMA9/21   : 4666.36 / 4663.60
+ RSI14     : 75.6
+ ATR14     : 1.96
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 22:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4670.78
+ EMA9/21   : 4667.24 / 4664.25
+ RSI14     : 77.8
+ ATR14     : 2.01
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 22:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4673.49
+ EMA9/21   : 4668.69 / 4665.20
+ RSI14     : 81.5
+ ATR14     : 2.00
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 22:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4673.30
+ EMA9/21   : 4669.50 / 4665.87
+ RSI14     : 81.3
+ ATR14     : 1.93
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 23:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4671.06
+ EMA9/21   : 4669.82 / 4666.35
+ RSI14     : 69.8
+ ATR14     : 1.99
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 23:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4670.63
+ EMA9/21   : 4669.93 / 4666.71
+ RSI14     : 67.9
+ ATR14     : 1.99
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 23:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4667.61
+ EMA9/21   : 4669.41 / 4666.76
+ RSI14     : 56.0
+ ATR14     : 2.11
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 23:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4667.60
+ EMA9/21   : 4669.15 / 4666.89
+ RSI14     : 55.8
+ ATR14     : 2.10
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 23:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4663.76
+ EMA9/21   : 4668.08 / 4666.61
+ RSI14     : 44.3
+ ATR14     : 2.25
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 23:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4660.96
+ EMA9/21   : 4666.52 / 4666.03
+ RSI14     : 38.3
+ ATR14     : 2.36
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 23:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4660.80
+ EMA9/21   : 4665.36 / 4665.54
+ RSI14     : 38.0
+ ATR14     : 2.37
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : SELL
+ Entry ~   : 4660.80
+ SL        : 4664.36
+ TP        : 4654.87
+ R:R       : 1:1.67
+--------------------------------------------------
+ RISK      : $3.56 (3.6% of $100.0 acct)
+ ⚠️ WARNING: Risk exceeds safe threshold for this account size!
+==================================================
+
+[INFO] New signal detected! Sending Telegram alert...
+[INFO] Telegram alert sent successfully.
+Traceback (most recent call last):
+  File "/opt/gold/gold_signal.py", line 262, in <module>
+    main()
+  File "/opt/gold/gold_signal.py", line 251, in main
+    save_state(state)
+  File "/opt/gold/gold_signal.py", line 165, in save_state
+    json.dump(state, f)
+  File "/usr/lib/python3.11/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/usr/lib/python3.11/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.11/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Timestamp is not JSON serializable
+==================================================
+ XAU/USD 5m read — 2026-08-25 23:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4660.42
+ EMA9/21   : 4664.42 / 4665.10
+ RSI14     : 37.5
+ ATR14     : 2.32
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 23:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4656.37
+ EMA9/21   : 4662.84 / 4664.33
+ RSI14     : 30.3
+ ATR14     : 2.48
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 23:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4658.44
+ EMA9/21   : 4661.97 / 4663.80
+ RSI14     : 36.9
+ ATR14     : 2.45
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 23:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4656.55
+ EMA9/21   : 4660.56 / 4662.97
+ RSI14     : 30.9
+ ATR14     : 2.50
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-25 23:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4655.24
+ EMA9/21   : 4659.31 / 4662.17
+ RSI14     : 28.5
+ ATR14     : 2.43
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 00:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4655.09
+ EMA9/21   : 4658.25 / 4661.41
+ RSI14     : 31.1
+ ATR14     : 2.57
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 00:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4652.25
+ EMA9/21   : 4656.79 / 4660.45
+ RSI14     : 24.1
+ ATR14     : 2.54
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 00:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4654.11
+ EMA9/21   : 4656.42 / 4659.96
+ RSI14     : 29.2
+ ATR14     : 2.48
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 00:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4653.71
+ EMA9/21   : 4655.67 / 4659.28
+ RSI14     : 29.0
+ ATR14     : 2.48
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 00:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4646.21
+ EMA9/21   : 4653.92 / 4658.17
+ RSI14     : 21.4
+ ATR14     : 2.98
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 00:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4645.88
+ EMA9/21   : 4652.21 / 4657.00
+ RSI14     : 21.9
+ ATR14     : 3.01
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 00:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4648.83
+ EMA9/21   : 4651.78 / 4656.38
+ RSI14     : 30.9
+ ATR14     : 3.04
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 00:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4641.44
+ EMA9/21   : 4650.15 / 4655.25
+ RSI14     : 27.1
+ ATR14     : 3.99
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 00:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4637.92
+ EMA9/21   : 4647.48 / 4653.56
+ RSI14     : 24.5
+ ATR14     : 4.08
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 00:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4637.32
+ EMA9/21   : 4645.30 / 4652.01
+ RSI14     : 24.6
+ ATR14     : 3.88
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 00:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4636.60
+ EMA9/21   : 4643.61 / 4650.63
+ RSI14     : 24.5
+ ATR14     : 3.73
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 00:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4637.83
+ EMA9/21   : 4642.62 / 4649.55
+ RSI14     : 25.7
+ ATR14     : 3.83
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 01:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4640.91
+ EMA9/21   : 4642.33 / 4648.79
+ RSI14     : 32.9
+ ATR14     : 3.87
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 01:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4642.86
+ EMA9/21   : 4642.76 / 4648.42
+ RSI14     : 36.9
+ ATR14     : 4.21
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 01:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4645.18
+ EMA9/21   : 4642.95 / 4647.98
+ RSI14     : 42.6
+ ATR14     : 4.29
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 01:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4650.19
+ EMA9/21   : 4644.18 / 4648.06
+ RSI14     : 50.5
+ ATR14     : 4.55
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 01:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4648.75
+ EMA9/21   : 4644.73 / 4647.94
+ RSI14     : 48.6
+ ATR14     : 4.46
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 01:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4646.01
+ EMA9/21   : 4644.71 / 4647.62
+ RSI14     : 44.5
+ ATR14     : 4.43
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 01:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4641.98
+ EMA9/21   : 4644.22 / 4647.14
+ RSI14     : 39.2
+ ATR14     : 4.44
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 01:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4646.38
+ EMA9/21   : 4644.49 / 4646.98
+ RSI14     : 46.9
+ ATR14     : 4.71
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 01:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4643.79
+ EMA9/21   : 4644.00 / 4646.51
+ RSI14     : 43.2
+ ATR14     : 4.83
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 01:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4643.92
+ EMA9/21   : 4644.24 / 4646.41
+ RSI14     : 43.6
+ ATR14     : 4.78
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 01:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4652.84
+ EMA9/21   : 4646.66 / 4647.36
+ RSI14     : 56.3
+ ATR14     : 4.95
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 01:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4658.87
+ EMA9/21   : 4648.98 / 4648.34
+ RSI14     : 62.9
+ ATR14     : 5.24
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : BUY
+ Entry ~   : 4658.87
+ SL        : 4651.01
+ TP        : 4671.96
+ R:R       : 1:1.67
+--------------------------------------------------
+ RISK      : $7.86 (7.9% of $100.0 acct)
+ ⚠️ WARNING: Risk exceeds safe threshold for this account size!
+==================================================
+
+[INFO] New signal detected! Sending Telegram alert...
+[INFO] Telegram alert sent successfully.
+Traceback (most recent call last):
+  File "/opt/gold/gold_signal.py", line 262, in <module>
+    main()
+  File "/opt/gold/gold_signal.py", line 251, in main
+    save_state(state)
+  File "/opt/gold/gold_signal.py", line 165, in save_state
+    json.dump(state, f)
+  File "/usr/lib/python3.11/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/usr/lib/python3.11/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.11/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Timestamp is not JSON serializable
+==================================================
+ XAU/USD 5m read — 2026-08-26 02:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4657.87
+ EMA9/21   : 4651.10 / 4649.38
+ RSI14     : 60.0
+ ATR14     : 5.39
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 02:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4660.60
+ EMA9/21   : 4652.91 / 4650.35
+ RSI14     : 62.3
+ ATR14     : 5.27
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 02:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4658.49
+ EMA9/21   : 4654.08 / 4651.12
+ RSI14     : 59.0
+ ATR14     : 5.12
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 02:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4660.59
+ EMA9/21   : 4655.71 / 4652.16
+ RSI14     : 62.1
+ ATR14     : 4.83
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 02:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4660.04
+ EMA9/21   : 4656.66 / 4652.91
+ RSI14     : 60.8
+ ATR14     : 4.60
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 02:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4657.60
+ EMA9/21   : 4656.79 / 4653.31
+ RSI14     : 56.8
+ ATR14     : 4.47
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 02:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4660.19
+ EMA9/21   : 4657.39 / 4653.89
+ RSI14     : 59.6
+ ATR14     : 4.58
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 02:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4660.59
+ EMA9/21   : 4658.54 / 4654.77
+ RSI14     : 58.5
+ ATR14     : 4.69
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 02:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4668.89
+ EMA9/21   : 4660.97 / 4656.24
+ RSI14     : 67.4
+ ATR14     : 4.92
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 02:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4667.29
+ EMA9/21   : 4662.39 / 4657.32
+ RSI14     : 64.0
+ ATR14     : 4.81
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 02:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4662.80
+ EMA9/21   : 4662.33 / 4657.75
+ RSI14     : 57.5
+ ATR14     : 4.87
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 02:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4659.09
+ EMA9/21   : 4661.49 / 4657.77
+ RSI14     : 52.8
+ ATR14     : 4.88
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 03:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4656.96
+ EMA9/21   : 4660.54 / 4657.67
+ RSI14     : 50.2
+ ATR14     : 4.91
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 03:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4651.16
+ EMA9/21   : 4658.34 / 4656.91
+ RSI14     : 44.0
+ ATR14     : 5.15
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 03:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4648.33
+ EMA9/21   : 4656.17 / 4656.04
+ RSI14     : 41.3
+ ATR14     : 5.01
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 03:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4646.95
+ EMA9/21   : 4654.35 / 4655.23
+ RSI14     : 40.0
+ ATR14     : 4.83
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : SELL
+ Entry ~   : 4646.95
+ SL        : 4654.19
+ TP        : 4634.88
+ R:R       : 1:1.67
+--------------------------------------------------
+ RISK      : $7.24 (7.2% of $100.0 acct)
+ ⚠️ WARNING: Risk exceeds safe threshold for this account size!
+==================================================
+
+[INFO] New signal detected! Sending Telegram alert...
+[INFO] Telegram alert sent successfully.
+Traceback (most recent call last):
+  File "/opt/gold/gold_signal.py", line 262, in <module>
+    main()
+  File "/opt/gold/gold_signal.py", line 251, in main
+    save_state(state)
+  File "/opt/gold/gold_signal.py", line 165, in save_state
+    json.dump(state, f)
+  File "/usr/lib/python3.11/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/usr/lib/python3.11/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.11/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Timestamp is not JSON serializable
+==================================================
+ XAU/USD 5m read — 2026-08-26 03:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4650.00
+ EMA9/21   : 4653.44 / 4654.73
+ RSI14     : 44.3
+ ATR14     : 4.74
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 03:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4648.53
+ EMA9/21   : 4652.43 / 4654.16
+ RSI14     : 42.7
+ ATR14     : 4.53
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 03:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4649.84
+ EMA9/21   : 4651.86 / 4653.74
+ RSI14     : 44.7
+ ATR14     : 4.45
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 03:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4649.85
+ EMA9/21   : 4651.59 / 4653.45
+ RSI14     : 44.8
+ ATR14     : 4.23
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 03:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4646.68
+ EMA9/21   : 4650.78 / 4652.92
+ RSI14     : 41.3
+ ATR14     : 4.37
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 03:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4644.33
+ EMA9/21   : 4649.57 / 4652.19
+ RSI14     : 38.8
+ ATR14     : 4.37
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 03:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4645.35
+ EMA9/21   : 4648.74 / 4651.57
+ RSI14     : 40.4
+ ATR14     : 4.19
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 03:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4643.65
+ EMA9/21   : 4647.71 / 4650.85
+ RSI14     : 38.5
+ ATR14     : 4.03
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 04:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4643.05
+ EMA9/21   : 4646.84 / 4650.17
+ RSI14     : 37.8
+ ATR14     : 3.82
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 04:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4641.85
+ EMA9/21   : 4645.97 / 4649.48
+ RSI14     : 36.4
+ ATR14     : 3.77
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 04:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4643.33
+ EMA9/21   : 4645.67 / 4649.04
+ RSI14     : 38.1
+ ATR14     : 3.55
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 04:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4642.17
+ EMA9/21   : 4644.95 / 4648.40
+ RSI14     : 36.6
+ ATR14     : 3.40
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 04:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4642.67
+ EMA9/21   : 4644.55 / 4647.91
+ RSI14     : 37.4
+ ATR14     : 3.22
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 04:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4641.17
+ EMA9/21   : 4643.72 / 4647.22
+ RSI14     : 35.2
+ ATR14     : 3.18
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 04:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4643.11
+ EMA9/21   : 4643.71 / 4646.90
+ RSI14     : 39.5
+ ATR14     : 3.08
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 04:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4642.01
+ EMA9/21   : 4643.10 / 4646.32
+ RSI14     : 37.2
+ ATR14     : 2.93
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 04:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4641.52
+ EMA9/21   : 4642.66 / 4645.82
+ RSI14     : 36.1
+ ATR14     : 2.87
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 04:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4639.67
+ EMA9/21   : 4642.09 / 4645.27
+ RSI14     : 33.2
+ ATR14     : 2.82
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 04:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4641.10
+ EMA9/21   : 4641.81 / 4644.85
+ RSI14     : 38.2
+ ATR14     : 2.80
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 04:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4640.29
+ EMA9/21   : 4641.61 / 4644.49
+ RSI14     : 37.4
+ ATR14     : 2.75
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 05:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4642.83
+ EMA9/21   : 4641.78 / 4644.30
+ RSI14     : 44.3
+ ATR14     : 2.81
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 05:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4644.04
+ EMA9/21   : 4642.31 / 4644.32
+ RSI14     : 47.1
+ ATR14     : 2.83
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 05:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4642.71
+ EMA9/21   : 4642.19 / 4644.07
+ RSI14     : 44.2
+ ATR14     : 2.90
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 05:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4643.50
+ EMA9/21   : 4642.35 / 4643.96
+ RSI14     : 46.6
+ ATR14     : 2.93
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 05:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4642.43
+ EMA9/21   : 4642.42 / 4643.85
+ RSI14     : 44.5
+ ATR14     : 2.85
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 05:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4644.33
+ EMA9/21   : 4643.09 / 4644.05
+ RSI14     : 48.6
+ ATR14     : 2.78
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 05:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4646.64
+ EMA9/21   : 4643.90 / 4644.33
+ RSI14     : 54.1
+ ATR14     : 2.84
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 05:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4640.74
+ EMA9/21   : 4643.13 / 4643.93
+ RSI14     : 41.1
+ ATR14     : 3.10
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 05:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4645.92
+ EMA9/21   : 4643.51 / 4644.02
+ RSI14     : 52.3
+ ATR14     : 3.46
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 05:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4638.56
+ EMA9/21   : 4641.52 / 4643.01
+ RSI14     : 37.5
+ ATR14     : 3.62
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 05:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4639.72
+ EMA9/21   : 4641.28 / 4642.77
+ RSI14     : 40.0
+ ATR14     : 3.59
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 05:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4638.97
+ EMA9/21   : 4640.87 / 4642.45
+ RSI14     : 38.8
+ ATR14     : 3.56
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 06:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4637.09
+ EMA9/21   : 4640.16 / 4641.99
+ RSI14     : 35.3
+ ATR14     : 3.49
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 06:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4638.71
+ EMA9/21   : 4640.26 / 4641.89
+ RSI14     : 38.4
+ ATR14     : 3.81
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 06:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4638.69
+ EMA9/21   : 4639.93 / 4641.59
+ RSI14     : 38.5
+ ATR14     : 3.76
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 06:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4632.79
+ EMA9/21   : 4638.47 / 4640.77
+ RSI14     : 28.1
+ ATR14     : 3.91
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 06:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4628.87
+ EMA9/21   : 4636.51 / 4639.67
+ RSI14     : 23.6
+ ATR14     : 4.08
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 06:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4628.48
+ EMA9/21   : 4634.65 / 4638.52
+ RSI14     : 25.9
+ ATR14     : 4.10
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 06:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4630.13
+ EMA9/21   : 4633.35 / 4637.56
+ RSI14     : 32.8
+ ATR14     : 4.16
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 06:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4628.02
+ EMA9/21   : 4632.09 / 4636.59
+ RSI14     : 28.6
+ ATR14     : 4.15
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 06:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4632.67
+ EMA9/21   : 4632.42 / 4636.34
+ RSI14     : 39.6
+ ATR14     : 4.15
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 06:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4636.21
+ EMA9/21   : 4633.32 / 4636.40
+ RSI14     : 47.1
+ ATR14     : 4.16
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 06:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4634.96
+ EMA9/21   : 4633.64 / 4636.27
+ RSI14     : 44.9
+ ATR14     : 4.07
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 06:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4633.05
+ EMA9/21   : 4633.28 / 4635.85
+ RSI14     : 41.9
+ ATR14     : 4.02
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 07:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4638.39
+ EMA9/21   : 4634.41 / 4636.14
+ RSI14     : 52.1
+ ATR14     : 4.14
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 07:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4635.15
+ EMA9/21   : 4634.27 / 4635.90
+ RSI14     : 46.4
+ ATR14     : 4.18
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 07:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4634.32
+ EMA9/21   : 4634.23 / 4635.73
+ RSI14     : 45.0
+ ATR14     : 4.02
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 07:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4637.78
+ EMA9/21   : 4635.24 / 4636.07
+ RSI14     : 51.6
+ ATR14     : 3.94
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 07:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4634.07
+ EMA9/21   : 4634.56 / 4635.66
+ RSI14     : 44.7
+ ATR14     : 3.97
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 07:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4632.93
+ EMA9/21   : 4634.15 / 4635.37
+ RSI14     : 42.7
+ ATR14     : 3.89
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 07:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4634.14
+ EMA9/21   : 4633.99 / 4635.17
+ RSI14     : 46.0
+ ATR14     : 3.94
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 07:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4632.95
+ EMA9/21   : 4633.86 / 4635.01
+ RSI14     : 44.0
+ ATR14     : 3.91
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 07:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4630.33
+ EMA9/21   : 4632.92 / 4634.46
+ RSI14     : 39.9
+ ATR14     : 3.95
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 07:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4632.38
+ EMA9/21   : 4632.85 / 4634.30
+ RSI14     : 44.3
+ ATR14     : 3.83
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 07:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4628.41
+ EMA9/21   : 4632.07 / 4633.82
+ RSI14     : 38.6
+ ATR14     : 4.12
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 07:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4626.84
+ EMA9/21   : 4631.11 / 4633.23
+ RSI14     : 36.5
+ ATR14     : 4.01
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 08:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4629.32
+ EMA9/21   : 4631.13 / 4633.07
+ RSI14     : 40.2
+ ATR14     : 3.97
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 08:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4626.89
+ EMA9/21   : 4630.38 / 4632.55
+ RSI14     : 37.0
+ ATR14     : 3.92
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 08:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4627.67
+ EMA9/21   : 4629.59 / 4631.98
+ RSI14     : 40.1
+ ATR14     : 4.08
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 08:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4627.38
+ EMA9/21   : 4629.18 / 4631.58
+ RSI14     : 39.8
+ ATR14     : 4.14
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 08:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4623.75
+ EMA9/21   : 4627.56 / 4630.59
+ RSI14     : 35.2
+ ATR14     : 3.97
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 08:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4628.23
+ EMA9/21   : 4627.57 / 4630.31
+ RSI14     : 44.7
+ ATR14     : 4.11
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 08:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4627.72
+ EMA9/21   : 4627.71 / 4630.13
+ RSI14     : 44.2
+ ATR14     : 4.16
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 08:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4630.60
+ EMA9/21   : 4628.48 / 4630.28
+ RSI14     : 48.8
+ ATR14     : 4.08
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 08:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4628.93
+ EMA9/21   : 4628.21 / 4629.97
+ RSI14     : 46.1
+ ATR14     : 3.85
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 08:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4628.24
+ EMA9/21   : 4628.22 / 4629.82
+ RSI14     : 45.0
+ ATR14     : 3.68
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 08:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4628.45
+ EMA9/21   : 4628.20 / 4629.66
+ RSI14     : 45.6
+ ATR14     : 3.49
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 08:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4626.59
+ EMA9/21   : 4627.82 / 4629.35
+ RSI14     : 42.2
+ ATR14     : 3.39
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 09:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4630.79
+ EMA9/21   : 4628.55 / 4629.55
+ RSI14     : 50.9
+ ATR14     : 3.44
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 09:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4627.55
+ EMA9/21   : 4627.94 / 4629.16
+ RSI14     : 44.2
+ ATR14     : 3.41
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 09:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4627.70
+ EMA9/21   : 4627.54 / 4628.84
+ RSI14     : 45.8
+ ATR14     : 3.49
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 09:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4622.52
+ EMA9/21   : 4626.17 / 4628.08
+ RSI14     : 35.6
+ ATR14     : 3.54
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 09:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4620.75
+ EMA9/21   : 4625.15 / 4627.45
+ RSI14     : 33.0
+ ATR14     : 3.49
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 09:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4616.79
+ EMA9/21   : 4623.49 / 4626.48
+ RSI14     : 28.1
+ ATR14     : 3.61
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 09:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4621.90
+ EMA9/21   : 4623.34 / 4626.15
+ RSI14     : 39.6
+ ATR14     : 3.71
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 09:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4621.04
+ EMA9/21   : 4622.79 / 4625.64
+ RSI14     : 37.9
+ ATR14     : 3.50
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 09:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4620.73
+ EMA9/21   : 4622.32 / 4625.17
+ RSI14     : 37.4
+ ATR14     : 3.30
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 09:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4624.20
+ EMA9/21   : 4622.88 / 4625.17
+ RSI14     : 45.7
+ ATR14     : 3.44
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 09:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4623.61
+ EMA9/21   : 4623.12 / 4625.08
+ RSI14     : 44.7
+ ATR14     : 3.33
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 09:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4624.00
+ EMA9/21   : 4623.18 / 4624.92
+ RSI14     : 46.0
+ ATR14     : 3.31
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 10:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4621.58
+ EMA9/21   : 4622.87 / 4624.62
+ RSI14     : 41.8
+ ATR14     : 3.34
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 10:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4623.01
+ EMA9/21   : 4623.12 / 4624.59
+ RSI14     : 44.2
+ ATR14     : 3.35
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 10:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4618.85
+ EMA9/21   : 4621.92 / 4623.89
+ RSI14     : 37.2
+ ATR14     : 3.37
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 10:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4620.04
+ EMA9/21   : 4621.44 / 4623.49
+ RSI14     : 40.8
+ ATR14     : 3.31
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 10:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4615.70
+ EMA9/21   : 4620.05 / 4622.65
+ RSI14     : 33.0
+ ATR14     : 3.38
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 10:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4614.14
+ EMA9/21   : 4619.51 / 4622.21
+ RSI14     : 32.1
+ ATR14     : 3.70
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 10:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4618.44
+ EMA9/21   : 4619.43 / 4621.94
+ RSI14     : 41.2
+ ATR14     : 3.72
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 10:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4621.49
+ EMA9/21   : 4619.92 / 4621.94
+ RSI14     : 47.3
+ ATR14     : 3.76
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 10:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4622.30
+ EMA9/21   : 4620.65 / 4622.10
+ RSI14     : 48.6
+ ATR14     : 3.81
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 10:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4622.62
+ EMA9/21   : 4620.86 / 4622.05
+ RSI14     : 49.4
+ ATR14     : 3.74
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 10:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4622.84
+ EMA9/21   : 4621.36 / 4622.18
+ RSI14     : 49.8
+ ATR14     : 3.65
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 10:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4620.55
+ EMA9/21   : 4621.11 / 4621.98
+ RSI14     : 45.9
+ ATR14     : 3.60
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 11:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4620.99
+ EMA9/21   : 4621.01 / 4621.86
+ RSI14     : 46.9
+ ATR14     : 3.47
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 11:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4618.57
+ EMA9/21   : 4620.56 / 4621.58
+ RSI14     : 43.0
+ ATR14     : 3.43
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 11:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4617.53
+ EMA9/21   : 4619.84 / 4621.15
+ RSI14     : 41.5
+ ATR14     : 3.33
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 11:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4621.46
+ EMA9/21   : 4620.34 / 4621.27
+ RSI14     : 49.0
+ ATR14     : 3.40
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 11:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4617.69
+ EMA9/21   : 4619.94 / 4621.01
+ RSI14     : 43.3
+ ATR14     : 3.60
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 11:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4620.36
+ EMA9/21   : 4619.89 / 4620.88
+ RSI14     : 48.1
+ ATR14     : 3.67
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 11:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4622.59
+ EMA9/21   : 4620.52 / 4621.08
+ RSI14     : 51.4
+ ATR14     : 3.65
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 11:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4618.23
+ EMA9/21   : 4620.02 / 4620.80
+ RSI14     : 45.2
+ ATR14     : 3.74
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 11:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4618.21
+ EMA9/21   : 4619.59 / 4620.53
+ RSI14     : 45.3
+ ATR14     : 3.59
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 11:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4617.72
+ EMA9/21   : 4619.38 / 4620.36
+ RSI14     : 44.8
+ ATR14     : 3.50
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 11:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4619.17
+ EMA9/21   : 4619.33 / 4620.25
+ RSI14     : 47.3
+ ATR14     : 3.39
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 11:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4624.23
+ EMA9/21   : 4620.37 / 4620.64
+ RSI14     : 54.7
+ ATR14     : 3.59
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 12:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4628.34
+ EMA9/21   : 4622.10 / 4621.41
+ RSI14     : 59.6
+ ATR14     : 3.79
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : BUY
+ Entry ~   : 4628.34
+ SL        : 4622.65
+ TP        : 4637.83
+ R:R       : 1:1.67
+--------------------------------------------------
+ RISK      : $5.69 (5.7% of $100.0 acct)
+ ⚠️ WARNING: Risk exceeds safe threshold for this account size!
+==================================================
+
+[INFO] New signal detected! Sending Telegram alert...
+[INFO] Telegram alert sent successfully.
+Traceback (most recent call last):
+  File "/opt/gold/gold_signal.py", line 262, in <module>
+    main()
+  File "/opt/gold/gold_signal.py", line 251, in main
+    save_state(state)
+  File "/opt/gold/gold_signal.py", line 165, in save_state
+    json.dump(state, f)
+  File "/usr/lib/python3.11/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/usr/lib/python3.11/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.11/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Timestamp is not JSON serializable
+==================================================
+ XAU/USD 5m read — 2026-08-26 12:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4628.30
+ EMA9/21   : 4623.15 / 4621.94
+ RSI14     : 59.7
+ ATR14     : 3.74
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 12:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4627.08
+ EMA9/21   : 4624.00 / 4622.44
+ RSI14     : 57.3
+ ATR14     : 3.70
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 12:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4627.81
+ EMA9/21   : 4624.79 / 4622.95
+ RSI14     : 58.3
+ ATR14     : 3.77
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 12:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4627.17
+ EMA9/21   : 4625.48 / 4623.44
+ RSI14     : 56.4
+ ATR14     : 3.77
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 12:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4630.23
+ EMA9/21   : 4626.31 / 4623.99
+ RSI14     : 60.0
+ ATR14     : 3.93
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 12:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4616.13
+ EMA9/21   : 4624.11 / 4623.19
+ RSI14     : 41.6
+ ATR14     : 4.88
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 12:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4624.34
+ EMA9/21   : 4625.00 / 4623.73
+ RSI14     : 51.1
+ ATR14     : 5.11
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 12:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4616.63
+ EMA9/21   : 4622.94 / 4622.89
+ RSI14     : 41.5
+ ATR14     : 5.27
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 12:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4618.60
+ EMA9/21   : 4623.04 / 4623.00
+ RSI14     : 43.6
+ ATR14     : 5.53
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 12:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4619.96
+ EMA9/21   : 4623.09 / 4623.07
+ RSI14     : 45.0
+ ATR14     : 5.56
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 12:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4617.33
+ EMA9/21   : 4621.56 / 4622.35
+ RSI14     : 41.7
+ ATR14     : 5.56
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 12:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4617.33
+ EMA9/21   : 4621.56 / 4622.35
+ RSI14     : 41.7
+ ATR14     : 5.56
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 13:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4611.78
+ EMA9/21   : 4618.43 / 4620.70
+ RSI14     : 35.2
+ ATR14     : 6.90
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 13:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4611.47
+ EMA9/21   : 4616.85 / 4619.77
+ RSI14     : 35.7
+ ATR14     : 6.60
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 13:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4607.46
+ EMA9/21   : 4614.82 / 4618.57
+ RSI14     : 30.8
+ ATR14     : 7.07
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 13:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4602.52
+ EMA9/21   : 4612.84 / 4617.36
+ RSI14     : 26.4
+ ATR14     : 7.46
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 13:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4607.91
+ EMA9/21   : 4613.37 / 4617.28
+ RSI14     : 32.5
+ ATR14     : 7.41
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 13:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4612.84
+ EMA9/21   : 4613.58 / 4617.04
+ RSI14     : 40.9
+ ATR14     : 7.53
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 13:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4615.41
+ EMA9/21   : 4614.48 / 4617.17
+ RSI14     : 45.6
+ ATR14     : 7.39
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 13:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4619.47
+ EMA9/21   : 4615.47 / 4617.37
+ RSI14     : 52.1
+ ATR14     : 7.49
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 13:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4622.75
+ EMA9/21   : 4617.04 / 4617.92
+ RSI14     : 56.5
+ ATR14     : 7.34
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 13:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4626.64
+ EMA9/21   : 4619.02 / 4618.75
+ RSI14     : 61.1
+ ATR14     : 7.19
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : BUY
+ Entry ~   : 4626.64
+ SL        : 4615.86
+ TP        : 4644.61
+ R:R       : 1:1.67
+--------------------------------------------------
+ RISK      : $10.78 (10.8% of $100.0 acct)
+ ⚠️ WARNING: Risk exceeds safe threshold for this account size!
+==================================================
+
+[INFO] New signal detected! Sending Telegram alert...
+[INFO] Telegram alert sent successfully.
+Traceback (most recent call last):
+  File "/opt/gold/gold_signal.py", line 262, in <module>
+    main()
+  File "/opt/gold/gold_signal.py", line 251, in main
+    save_state(state)
+  File "/opt/gold/gold_signal.py", line 165, in save_state
+    json.dump(state, f)
+  File "/usr/lib/python3.11/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/usr/lib/python3.11/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.11/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Timestamp is not JSON serializable
+==================================================
+ XAU/USD 5m read — 2026-08-26 13:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4629.11
+ EMA9/21   : 4620.89 / 4619.61
+ RSI14     : 63.8
+ ATR14     : 6.94
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 14:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4624.11
+ EMA9/21   : 4621.64 / 4620.08
+ RSI14     : 55.3
+ ATR14     : 7.13
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 14:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4624.85
+ EMA9/21   : 4622.60 / 4620.68
+ RSI14     : 56.2
+ ATR14     : 6.83
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 14:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4621.39
+ EMA9/21   : 4622.10 / 4620.60
+ RSI14     : 51.2
+ ATR14     : 6.74
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 14:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4621.90
+ EMA9/21   : 4622.40 / 4620.90
+ RSI14     : 51.7
+ ATR14     : 6.51
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 14:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4624.81
+ EMA9/21   : 4623.00 / 4621.32
+ RSI14     : 55.9
+ ATR14     : 6.26
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 14:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4618.33
+ EMA9/21   : 4621.60 / 4620.80
+ RSI14     : 46.2
+ ATR14     : 6.36
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 14:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4616.68
+ EMA9/21   : 4620.67 / 4620.46
+ RSI14     : 43.8
+ ATR14     : 6.05
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 14:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4615.36
+ EMA9/21   : 4619.55 / 4619.96
+ RSI14     : 42.0
+ ATR14     : 5.92
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : SELL
+ Entry ~   : 4615.36
+ SL        : 4624.24
+ TP        : 4600.57
+ R:R       : 1:1.67
+--------------------------------------------------
+ RISK      : $8.88 (8.9% of $100.0 acct)
+ ⚠️ WARNING: Risk exceeds safe threshold for this account size!
+==================================================
+
+[INFO] New signal detected! Sending Telegram alert...
+[INFO] Telegram alert sent successfully.
+Traceback (most recent call last):
+  File "/opt/gold/gold_signal.py", line 262, in <module>
+    main()
+  File "/opt/gold/gold_signal.py", line 251, in main
+    save_state(state)
+  File "/opt/gold/gold_signal.py", line 165, in save_state
+    json.dump(state, f)
+  File "/usr/lib/python3.11/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/usr/lib/python3.11/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.11/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Timestamp is not JSON serializable
+==================================================
+ XAU/USD 5m read — 2026-08-26 14:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4621.40
+ EMA9/21   : 4619.96 / 4620.11
+ RSI14     : 51.9
+ ATR14     : 5.93
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 14:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4613.71
+ EMA9/21   : 4618.81 / 4619.58
+ RSI14     : 42.2
+ ATR14     : 6.45
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 14:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4612.00
+ EMA9/21   : 4617.28 / 4618.81
+ RSI14     : 40.4
+ ATR14     : 6.15
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 14:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4606.83
+ EMA9/21   : 4614.91 / 4617.58
+ RSI14     : 35.6
+ ATR14     : 6.38
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 15:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4599.70
+ EMA9/21   : 4611.94 / 4615.99
+ RSI14     : 30.2
+ ATR14     : 6.67
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 15:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4591.61
+ EMA9/21   : 4607.60 / 4613.63
+ RSI14     : 25.5
+ ATR14     : 7.16
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 15:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4594.12
+ EMA9/21   : 4605.47 / 4612.15
+ RSI14     : 26.7
+ ATR14     : 7.10
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 15:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4583.46
+ EMA9/21   : 4601.51 / 4609.77
+ RSI14     : 22.9
+ ATR14     : 7.83
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 15:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4593.16
+ EMA9/21   : 4601.14 / 4608.93
+ RSI14     : 29.3
+ ATR14     : 7.66
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 15:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4594.42
+ EMA9/21   : 4599.67 / 4607.55
+ RSI14     : 31.4
+ ATR14     : 7.36
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 15:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4597.33
+ EMA9/21   : 4599.42 / 4606.73
+ RSI14     : 35.8
+ ATR14     : 7.06
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 15:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4599.93
+ EMA9/21   : 4599.41 / 4606.05
+ RSI14     : 39.7
+ ATR14     : 6.90
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 15:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4602.46
+ EMA9/21   : 4599.89 / 4605.66
+ RSI14     : 43.3
+ ATR14     : 6.74
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 15:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4607.53
+ EMA9/21   : 4601.59 / 4605.92
+ RSI14     : 49.7
+ ATR14     : 6.69
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 15:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4600.95
+ EMA9/21   : 4601.58 / 4605.53
+ RSI14     : 43.0
+ ATR14     : 6.87
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 15:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4603.64
+ EMA9/21   : 4601.82 / 4605.27
+ RSI14     : 46.4
+ ATR14     : 6.77
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 16:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4597.99
+ EMA9/21   : 4600.19 / 4604.16
+ RSI14     : 40.5
+ ATR14     : 6.98
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 16:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4598.80
+ EMA9/21   : 4599.65 / 4603.54
+ RSI14     : 42.3
+ ATR14     : 6.93
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 16:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4599.54
+ EMA9/21   : 4599.91 / 4603.32
+ RSI14     : 43.4
+ ATR14     : 6.62
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 16:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4597.94
+ EMA9/21   : 4599.25 / 4602.69
+ RSI14     : 42.0
+ ATR14     : 6.31
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 16:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4596.30
+ EMA9/21   : 4598.78 / 4602.17
+ RSI14     : 40.6
+ ATR14     : 6.11
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 16:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4595.81
+ EMA9/21   : 4597.93 / 4601.46
+ RSI14     : 40.8
+ ATR14     : 5.88
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 16:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4594.38
+ EMA9/21   : 4597.17 / 4600.79
+ RSI14     : 39.2
+ ATR14     : 5.58
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 16:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4591.93
+ EMA9/21   : 4596.05 / 4599.95
+ RSI14     : 36.9
+ ATR14     : 5.48
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 16:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4590.68
+ EMA9/21   : 4594.62 / 4598.92
+ RSI14     : 36.5
+ ATR14     : 5.66
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 16:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4592.89
+ EMA9/21   : 4594.33 / 4598.40
+ RSI14     : 40.0
+ ATR14     : 5.68
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 16:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4590.21
+ EMA9/21   : 4593.72 / 4597.77
+ RSI14     : 38.0
+ ATR14     : 5.81
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 16:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4590.76
+ EMA9/21   : 4593.02 / 4597.08
+ RSI14     : 39.3
+ ATR14     : 5.56
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 17:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4592.23
+ EMA9/21   : 4592.96 / 4596.69
+ RSI14     : 41.4
+ ATR14     : 5.35
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 17:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4594.90
+ EMA9/21   : 4593.49 / 4596.60
+ RSI14     : 45.3
+ ATR14     : 5.40
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 17:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4594.66
+ EMA9/21   : 4593.92 / 4596.52
+ RSI14     : 45.2
+ ATR14     : 5.28
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 17:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4594.56
+ EMA9/21   : 4593.93 / 4596.28
+ RSI14     : 45.3
+ ATR14     : 5.06
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 17:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4598.15
+ EMA9/21   : 4594.65 / 4596.39
+ RSI14     : 50.4
+ ATR14     : 5.04
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 17:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4596.58
+ EMA9/21   : 4594.87 / 4596.32
+ RSI14     : 48.3
+ ATR14     : 4.88
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 17:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4598.60
+ EMA9/21   : 4595.74 / 4596.59
+ RSI14     : 51.3
+ ATR14     : 4.77
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 17:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4597.05
+ EMA9/21   : 4596.43 / 4596.86
+ RSI14     : 48.8
+ ATR14     : 4.93
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 17:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4597.65
+ EMA9/21   : 4596.81 / 4597.00
+ RSI14     : 49.5
+ ATR14     : 4.75
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 17:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4597.19
+ EMA9/21   : 4596.67 / 4596.91
+ RSI14     : 49.0
+ ATR14     : 4.63
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 17:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4598.93
+ EMA9/21   : 4597.11 / 4597.08
+ RSI14     : 51.6
+ ATR14     : 4.43
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : BUY
+ Entry ~   : 4598.93
+ SL        : 4592.27
+ TP        : 4610.01
+ R:R       : 1:1.67
+--------------------------------------------------
+ RISK      : $6.65 (6.7% of $100.0 acct)
+ ⚠️ WARNING: Risk exceeds safe threshold for this account size!
+==================================================
+
+[INFO] New signal detected! Sending Telegram alert...
+[INFO] Telegram alert sent successfully.
+Traceback (most recent call last):
+  File "/opt/gold/gold_signal.py", line 262, in <module>
+    main()
+  File "/opt/gold/gold_signal.py", line 251, in main
+    save_state(state)
+  File "/opt/gold/gold_signal.py", line 165, in save_state
+    json.dump(state, f)
+  File "/usr/lib/python3.11/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/usr/lib/python3.11/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.11/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Timestamp is not JSON serializable
+==================================================
+ XAU/USD 5m read — 2026-08-26 17:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4596.39
+ EMA9/21   : 4596.95 / 4597.01
+ RSI14     : 47.8
+ ATR14     : 4.45
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : SELL
+ Entry ~   : 4596.39
+ SL        : 4603.08
+ TP        : 4585.26
+ R:R       : 1:1.67
+--------------------------------------------------
+ RISK      : $6.68 (6.7% of $100.0 acct)
+ ⚠️ WARNING: Risk exceeds safe threshold for this account size!
+==================================================
+
+[INFO] New signal detected! Sending Telegram alert...
+[INFO] Telegram alert sent successfully.
+Traceback (most recent call last):
+  File "/opt/gold/gold_signal.py", line 262, in <module>
+    main()
+  File "/opt/gold/gold_signal.py", line 251, in main
+    save_state(state)
+  File "/opt/gold/gold_signal.py", line 165, in save_state
+    json.dump(state, f)
+  File "/usr/lib/python3.11/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/usr/lib/python3.11/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.11/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Timestamp is not JSON serializable
+==================================================
+ XAU/USD 5m read — 2026-08-26 18:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4600.89
+ EMA9/21   : 4597.85 / 4597.42
+ RSI14     : 54.4
+ ATR14     : 4.48
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 18:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4601.22
+ EMA9/21   : 4598.74 / 4597.88
+ RSI14     : 54.5
+ ATR14     : 4.48
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 18:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4602.67
+ EMA9/21   : 4599.49 / 4598.29
+ RSI14     : 56.4
+ ATR14     : 4.38
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 18:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4598.59
+ EMA9/21   : 4599.12 / 4598.23
+ RSI14     : 50.0
+ ATR14     : 4.40
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 18:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4594.04
+ EMA9/21   : 4597.80 / 4597.68
+ RSI14     : 43.8
+ ATR14     : 4.47
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 18:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4594.83
+ EMA9/21   : 4597.35 / 4597.50
+ RSI14     : 44.8
+ ATR14     : 4.26
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : SELL
+ Entry ~   : 4594.83
+ SL        : 4601.22
+ TP        : 4584.19
+ R:R       : 1:1.67
+--------------------------------------------------
+ RISK      : $6.38 (6.4% of $100.0 acct)
+ ⚠️ WARNING: Risk exceeds safe threshold for this account size!
+==================================================
+
+[INFO] New signal detected! Sending Telegram alert...
+[INFO] Telegram alert sent successfully.
+Traceback (most recent call last):
+  File "/opt/gold/gold_signal.py", line 262, in <module>
+    main()
+  File "/opt/gold/gold_signal.py", line 251, in main
+    save_state(state)
+  File "/opt/gold/gold_signal.py", line 165, in save_state
+    json.dump(state, f)
+  File "/usr/lib/python3.11/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/usr/lib/python3.11/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.11/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Timestamp is not JSON serializable
+==================================================
+ XAU/USD 5m read — 2026-08-26 18:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4594.46
+ EMA9/21   : 4596.67 / 4597.17
+ RSI14     : 44.4
+ ATR14     : 4.05
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 18:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4595.71
+ EMA9/21   : 4596.53 / 4597.07
+ RSI14     : 46.7
+ ATR14     : 4.00
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 18:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4596.75
+ EMA9/21   : 4596.33 / 4596.91
+ RSI14     : 48.9
+ ATR14     : 3.98
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 18:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4597.57
+ EMA9/21   : 4596.64 / 4597.01
+ RSI14     : 50.3
+ ATR14     : 3.81
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 18:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4597.47
+ EMA9/21   : 4596.85 / 4597.07
+ RSI14     : 50.1
+ ATR14     : 3.66
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 18:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4595.99
+ EMA9/21   : 4596.73 / 4597.00
+ RSI14     : 47.2
+ ATR14     : 3.70
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 19:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4593.03
+ EMA9/21   : 4595.72 / 4596.50
+ RSI14     : 42.3
+ ATR14     : 3.62
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 19:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4592.78
+ EMA9/21   : 4594.86 / 4596.02
+ RSI14     : 42.9
+ ATR14     : 3.56
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 19:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4593.70
+ EMA9/21   : 4594.51 / 4595.75
+ RSI14     : 44.9
+ ATR14     : 3.60
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 19:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4592.37
+ EMA9/21   : 4594.06 / 4595.43
+ RSI14     : 42.6
+ ATR14     : 3.55
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 19:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4593.23
+ EMA9/21   : 4593.95 / 4595.26
+ RSI14     : 44.4
+ ATR14     : 3.48
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 19:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4599.12
+ EMA9/21   : 4595.08 / 4595.66
+ RSI14     : 55.7
+ ATR14     : 3.75
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 19:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4599.78
+ EMA9/21   : 4595.75 / 4595.89
+ RSI14     : 56.9
+ ATR14     : 3.73
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 19:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4596.95
+ EMA9/21   : 4595.97 / 4595.98
+ RSI14     : 51.3
+ ATR14     : 3.67
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 19:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4596.78
+ EMA9/21   : 4596.22 / 4596.10
+ RSI14     : 50.9
+ ATR14     : 3.54
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 19:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4595.45
+ EMA9/21   : 4595.88 / 4595.94
+ RSI14     : 48.4
+ ATR14     : 3.49
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 19:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4595.38
+ EMA9/21   : 4595.83 / 4595.92
+ RSI14     : 48.2
+ ATR14     : 3.48
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 19:55:00+00:00 UTC  [strict]
+==================================================
+ close     : 4593.45
+ EMA9/21   : 4595.04 / 4595.53
+ RSI14     : 44.7
+ ATR14     : 3.33
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 20:00:00+00:00 UTC  [strict]
+==================================================
+ close     : 4594.33
+ EMA9/21   : 4594.80 / 4595.37
+ RSI14     : 47.0
+ ATR14     : 3.28
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 20:05:00+00:00 UTC  [strict]
+==================================================
+ close     : 4595.87
+ EMA9/21   : 4595.12 / 4595.47
+ RSI14     : 50.3
+ ATR14     : 3.31
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 20:10:00+00:00 UTC  [strict]
+==================================================
+ close     : 4592.80
+ EMA9/21   : 4594.55 / 4595.17
+ RSI14     : 44.1
+ ATR14     : 3.29
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 20:15:00+00:00 UTC  [strict]
+==================================================
+ close     : 4589.48
+ EMA9/21   : 4593.56 / 4594.67
+ RSI14     : 38.4
+ ATR14     : 3.36
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 20:20:00+00:00 UTC  [strict]
+==================================================
+ close     : 4586.67
+ EMA9/21   : 4592.22 / 4593.96
+ RSI14     : 34.4
+ ATR14     : 3.65
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 20:25:00+00:00 UTC  [strict]
+==================================================
+ close     : 4591.51
+ EMA9/21   : 4592.30 / 4593.85
+ RSI14     : 44.3
+ ATR14     : 3.72
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 20:30:00+00:00 UTC  [strict]
+==================================================
+ close     : 4591.30
+ EMA9/21   : 4592.11 / 4593.63
+ RSI14     : 44.0
+ ATR14     : 3.52
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 20:35:00+00:00 UTC  [strict]
+==================================================
+ close     : 4593.07
+ EMA9/21   : 4592.28 / 4593.56
+ RSI14     : 47.9
+ ATR14     : 3.43
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 20:40:00+00:00 UTC  [strict]
+==================================================
+ close     : 4592.81
+ EMA9/21   : 4592.41 / 4593.51
+ RSI14     : 47.4
+ ATR14     : 3.28
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 20:45:00+00:00 UTC  [strict]
+==================================================
+ close     : 4592.21
+ EMA9/21   : 4592.17 / 4593.28
+ RSI14     : 46.6
+ ATR14     : 3.13
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 20:50:00+00:00 UTC  [strict]
+==================================================
+ close     : 4592.92
+ EMA9/21   : 4592.42 / 4593.30
+ RSI14     : 48.1
+ ATR14     : 3.09
+ VWAP      : n/a
+--------------------------------------------------
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 20:55:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 21:00:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 21:05:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 21:10:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 21:15:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 21:20:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 21:25:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 21:30:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 21:35:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : BUY
+ Entry ~   : 4593.81 | SL: 4591.01 | TP: 4598.49
+ RISK      : $2.81 (2.8%)
+==================================================
+
+[INFO] New signal detected! Sending Telegram & Logging to CSV...
+[INFO] Telegram alert sent.
+==================================================
+ XAU/USD 5m read — 2026-08-26 21:40:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : BUY
+ Entry ~   : 4593.68 | SL: 4591.05 | TP: 4598.05
+ RISK      : $2.62 (2.6%)
+==================================================
+
+[INFO]  Cooldown active (5.0 mins since last signal). Suppressing to avoid whipsaw.
+==================================================
+ XAU/USD 5m read — 2026-08-26 21:45:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 21:50:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 21:55:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 22:00:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 22:05:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 22:10:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 22:15:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 22:20:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 22:25:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 22:30:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 22:35:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 22:40:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 22:45:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 22:50:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 22:55:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 23:00:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 23:05:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 23:10:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 23:15:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 23:20:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 23:25:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 23:30:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 23:35:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 23:40:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 23:45:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 23:50:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-26 23:55:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-27 00:00:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-27 00:05:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-27 00:10:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-27 00:15:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-27 00:20:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-27 00:25:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-27 00:30:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-27 00:35:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-27 00:40:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-27 00:45:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : SELL
+ Entry ~   : 4607.19 | SL: 4614.06 | TP: 4595.72
+ RISK      : $6.88 (6.9%)
+==================================================
+
+[INFO] New signal detected! Sending Telegram & Logging to CSV...
+[INFO] Telegram alert sent.
+==================================================
+ XAU/USD 5m read — 2026-08-27 00:50:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-27 00:55:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-27 01:00:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-27 01:05:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-27 01:10:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-27 01:15:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : BUY
+ Entry ~   : 4618.18 | SL: 4609.62 | TP: 4632.45
+ RISK      : $8.56 (8.6%)
+==================================================
+
+[INFO] New signal detected! Sending Telegram & Logging to CSV...
+[INFO] Telegram alert sent.
+==================================================
+ XAU/USD 5m read — 2026-08-27 01:20:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-27 01:25:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
+==================================================
+ XAU/USD 5m read — 2026-08-27 01:30:00+00:00 UTC  [strict]
+==================================================
+ BIAS      : NONE
+==================================================
