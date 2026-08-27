@@ -41,14 +41,16 @@ Optional: run resolver every 30 min:
 
 ## Next Ideas (Priority Order)
 
-### 1. Web Dashboard (high value)
-Simple local web page that shows:
-- Latest signal / current bias
-- Recent trades + outcomes
-- Win rate, average R, expectancy
-- Quick status of collector / last candle time
+### 1. Web Dashboard ✅ Done
+Flask dashboard (`dashboard.py` + `news_provider.py` + `templates/` + `static/`):
+- Live price chart (candles, EMA 9/21, VWAP, volume) + RSI subchart
+- Current signal / bias with entry, SL, TP, risk, filter status
+- Performance: win rate, avg R, expectancy, profit factor, equity curve, streaks
+- Trade journal table
+- Gold news headlines (server-side RSS, cached, graceful fallback)
+- Economic calendar (FOMC / CPI / NFP 2026) curated for gold
 
-Suggested stack: lightweight FastAPI or Flask + plain HTML (no heavy frontend needed).
+Run: `python3 dashboard.py` (live) or `python3 dashboard.py --demo` (synthetic).
 
 ### 2. Improve signal quality
 Possible experiments (test with `backtest.py` first):

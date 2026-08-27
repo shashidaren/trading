@@ -10,6 +10,10 @@ Gives you BUY / SELL / NONE reads with ATR-based SL/TP, sends Telegram alerts, a
 | `collector.py` | Pulls 5-minute XAU/USD candles from Twelve Data → `gold_data.db` |
 | `gold_signal.py` | Calculates indicators, generates signal, Telegram + journal logging |
 | `analyze_trades.py` | Performance report from `trade_journal.csv` |
+| `resolve_trades.py` | Auto-marks PENDING trades WIN/LOSS/BE from candle history |
+| `backtest.py` | Same rules as live, for quick rule testing |
+| `dashboard.py` | Web dashboard (chart, signal, performance, news, calendar) |
+| `news_provider.py` | Gold news RSS + curated economic calendar (used by dashboard) |
 | `trade_journal.csv` | Auto-created log of every signal (you mark WIN/LOSS later) |
 | `.env` | Your secrets (never commit this) |
 
@@ -59,6 +63,23 @@ python3 analyze_trades.py
 ```
 
 You will see win rate, average R, expectancy, breakdown by mode and direction.
+
+## Web dashboard
+
+A live web UI that combines everything into one screen — price chart with
+EMA/VWAP, current signal with SL/TP, performance stats and equity curve, the
+trade journal, gold news headlines, and an economic calendar (FOMC / CPI / NFP).
+
+```bash
+python3 dashboard.py            # live data (needs gold_data.db + journal)
+python3 dashboard.py --demo     # synthetic data — see the UI without a DB
+```
+
+Then open http://localhost:5000 . On your server bind it to a port you can reach
+(or behind a reverse proxy). News headlines are fetched server-side from RSS
+(no CORS); if the feeds are unreachable the panel falls back to recommended
+sources. The economic calendar is curated for gold — see `news_provider.py` to
+extend it or plug in a live feed.
 
 ## Notes
 
