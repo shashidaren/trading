@@ -1,6 +1,6 @@
 # Changelog
 
-## 2026-08-28 — Arena session arena/01a04423-trading
+## 2026-08-27 — Arena session arena/01a04423-trading
 
 - Session branch `arena/01a04423-trading` pushed to origin.
 - Pulled `main` (8f09d89) — already up to date; working tree clean.
