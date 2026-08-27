@@ -2,6 +2,10 @@
 """
 gold_signal.py — read the local candle DB, produce signals, send Telegram alerts,
 automatically log the signal to trade_journal.csv, and prevent whipsaw spam.
+
+Phase A filters:
+  - Session window (default 07:00–21:00 UTC = London + NY)
+  - ATR volatility filter (skip dead or chaotic bars)
 """
 
 import os
@@ -28,7 +32,7 @@ TG_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 # --- Account / Risk settings (adjust to your broker) ---
 ACCOUNT_BALANCE = 100.0
 LOT_SIZE = 0.01
-DOLLAR_PER_POINT = 1.0          # Check your broker: many gold contracts are $1 or $10 per point
+DOLLAR_PER_POINT = 1.0
 
 # --- Indicator settings ---
 EMA_FAST = 9
@@ -40,7 +44,17 @@ RSI_OVERSOLD = 30
 SL_ATR_MULT = 1.5
 TP_ATR_MULT = 2.5
 MAX_RISK_WARNING_PCT = 3.0
-COOLDOWN_MINUTES = 15           # Minimum minutes between signals
+COOLDOWN_MINUTES = 15
+
+# --- Phase A filters ---
+SESSION_START_UTC = 7          # 07:00 UTC (approx London open)
+SESSION_END_UTC = 21           # 21:00 UTC (approx NY close)
+USE_SESSION_FILTER = True
+
+ATR_LOOKBACK = 100             # bars for ATR percentile
+ATR_MIN_PCT = 20               # skip if ATR below this percentile (too quiet)
+ATR_MAX_PCT = 95               # skip if ATR above this percentile (too chaotic)
+USE_ATR_FILTER = True
 
 
 def get_conn():
@@ -54,7 +68,7 @@ def load_candles(min_bars=60):
     df = pd.read_sql_query(
         "SELECT * FROM candles ORDER BY ts ASC",
         conn,
-        parse_dates=["ts"]
+        parse_dates=["ts"],
     )
     conn.close()
     if len(df) < min_bars:
@@ -67,7 +81,6 @@ def add_indicators(df):
     df["ema_fast"] = df["close"].ewm(span=EMA_FAST, adjust=False).mean()
     df["ema_slow"] = df["close"].ewm(span=EMA_SLOW, adjust=False).mean()
 
-    # RSI (Wilder-style)
     delta = df["close"].diff()
     gain = delta.clip(lower=0)
     loss = -delta.clip(upper=0)
@@ -76,28 +89,58 @@ def add_indicators(df):
     rs = avg_gain / avg_loss.replace(0, np.nan)
     df["rsi"] = 100 - (100 / (1 + rs))
 
-    # ATR
     prev_close = df["close"].shift(1)
     tr = pd.concat([
         df["high"] - df["low"],
         (df["high"] - prev_close).abs(),
-        (df["low"] - prev_close).abs()
+        (df["low"] - prev_close).abs(),
     ], axis=1).max(axis=1)
     df["atr"] = tr.ewm(alpha=1 / ATR_PERIOD, adjust=False).mean()
 
-    # Session VWAP (resets daily)
     day = df["ts"].dt.date
     typical = (df["high"] + df["low"] + df["close"]) / 3
     volume = df["volume"].replace(0, np.nan)
     pv = typical * volume
     df["vwap"] = pv.groupby(day).cumsum() / volume.groupby(day).cumsum()
 
+    # Rolling ATR percentiles for volatility filter
+    df["atr_pctl"] = df["atr"].rolling(ATR_LOOKBACK, min_periods=20).apply(
+        lambda x: (x[-1] <= x).mean() * 100 if len(x) else np.nan,
+        raw=True,
+    )
+
     return df
+
+
+def in_session(ts) -> bool:
+    if not USE_SESSION_FILTER:
+        return True
+    hour = ts.hour if hasattr(ts, "hour") else pd.Timestamp(ts).hour
+    return SESSION_START_UTC <= hour < SESSION_END_UTC
+
+
+def atr_ok(atr_pctl) -> bool:
+    if not USE_ATR_FILTER:
+        return True
+    if pd.isna(atr_pctl):
+        return True  # not enough history yet — allow
+    return ATR_MIN_PCT <= float(atr_pctl) <= ATR_MAX_PCT
 
 
 def evaluate(df, mode="strict"):
     last = df.iloc[-1]
     prev = df.iloc[-2]
+
+    # Phase A filters
+    session_ok = in_session(last["ts"])
+    vol_ok = atr_ok(last.get("atr_pctl"))
+
+    filter_reason = None
+    if not session_ok:
+        filter_reason = f"outside session ({SESSION_START_UTC:02d}:00–{SESSION_END_UTC:02d}:00 UTC)"
+    elif not vol_ok:
+        pctl = last.get("atr_pctl")
+        filter_reason = f"ATR filter (percentile={pctl:.0f}, allow {ATR_MIN_PCT}–{ATR_MAX_PCT})"
 
     bull_cross = prev["ema_fast"] <= prev["ema_slow"] and last["ema_fast"] > last["ema_slow"]
     bear_cross = prev["ema_fast"] >= prev["ema_slow"] and last["ema_fast"] < last["ema_slow"]
@@ -111,13 +154,15 @@ def evaluate(df, mode="strict"):
     vwap_confirms_sell = pd.isna(last["vwap"]) or last["close"] <= last["vwap"]
 
     if mode == "strict":
-        # Only fire on a fresh EMA cross + RSI + VWAP confirmation
         buy = bull_cross and rsi_ok_buy and vwap_confirms_buy
         sell = bear_cross and rsi_ok_sell and vwap_confirms_sell
     else:
-        # Relaxed: any time we are in-trend with RSI support
         buy = trend_up and rsi_ok_buy and last["rsi"] > 50
         sell = trend_down and rsi_ok_sell and last["rsi"] < 50
+
+    # Apply Phase A filters
+    if filter_reason:
+        buy = sell = False
 
     bias = "BUY" if buy else ("SELL" if sell else "NONE")
     entry = float(last["close"])
@@ -135,7 +180,7 @@ def evaluate(df, mode="strict"):
     risk_usd = risk_pct = 0.0
     if sl is not None and atr > 0:
         sl_distance = abs(entry - sl)
-        risk_usd = sl_distance * DOLLAR_PER_POINT * (LOT_SIZE / 0.01)  # scale if you change lot size
+        risk_usd = sl_distance * DOLLAR_PER_POINT * (LOT_SIZE / 0.01)
         risk_pct = (risk_usd / ACCOUNT_BALANCE) * 100
 
     return {
@@ -145,6 +190,7 @@ def evaluate(df, mode="strict"):
         "ema_slow": float(last["ema_slow"]),
         "rsi": float(last["rsi"]),
         "atr": atr,
+        "atr_pctl": float(last["atr_pctl"]) if not pd.isna(last.get("atr_pctl")) else None,
         "vwap": float(last["vwap"]) if not pd.isna(last["vwap"]) else None,
         "bias": bias,
         "sl": sl,
@@ -152,6 +198,9 @@ def evaluate(df, mode="strict"):
         "mode": mode,
         "risk_usd": risk_usd,
         "risk_pct": risk_pct,
+        "filter_reason": filter_reason,
+        "session_ok": session_ok,
+        "vol_ok": vol_ok,
     }
 
 
@@ -173,7 +222,6 @@ def save_state(state):
 
 
 def log_to_csv(r):
-    """Append signal to trade journal. Outcome stays PENDING until you mark it."""
     file_exists = os.path.isfile(CSV_PATH)
     with open(CSV_PATH, mode="a", newline="") as f:
         writer = csv.writer(f)
@@ -181,7 +229,7 @@ def log_to_csv(r):
             writer.writerow([
                 "Logged_At_UTC", "Signal_TS", "Bias", "Mode",
                 "Entry", "SL", "TP", "ATR", "RSI",
-                "Risk_USD", "Risk_Pct", "Outcome", "R_Multiple", "Notes"
+                "Risk_USD", "Risk_Pct", "Outcome", "R_Multiple", "Notes",
             ])
         writer.writerow([
             datetime.now(timezone.utc).isoformat(),
@@ -240,9 +288,17 @@ def main():
     parser = argparse.ArgumentParser(description="XAU/USD 5m signal generator")
     parser.add_argument("--mode", choices=["strict", "relaxed"], default="strict",
                         help="strict = fresh EMA cross only; relaxed = in-trend + RSI")
+    parser.add_argument("--no-session", action="store_true", help="Disable session filter")
+    parser.add_argument("--no-atr-filter", action="store_true", help="Disable ATR volatility filter")
     args = parser.parse_args()
 
-    df = load_candles(min_bars=max(EMA_SLOW, RSI_PERIOD, ATR_PERIOD) * 2)
+    global USE_SESSION_FILTER, USE_ATR_FILTER
+    if args.no_session:
+        USE_SESSION_FILTER = False
+    if args.no_atr_filter:
+        USE_ATR_FILTER = False
+
+    df = load_candles(min_bars=max(EMA_SLOW, RSI_PERIOD, ATR_PERIOD, ATR_LOOKBACK) + 10)
     df = add_indicators(df)
     r = evaluate(df, mode=args.mode)
 
@@ -250,16 +306,20 @@ def main():
     print(f" XAU/USD 5m read — {r['ts']} UTC  [{r['mode']}]")
     print("=" * 55)
     print(f" BIAS      : {r['bias']}")
+    if r["filter_reason"]:
+        print(f" FILTERED  : {r['filter_reason']}")
     if r["bias"] != "NONE":
         print(f" Entry ~   : {r['close']:.2f} | SL: {r['sl']:.2f} | TP: {r['tp']:.2f}")
         print(f" RISK      : ${r['risk_usd']:.2f} ({r['risk_pct']:.1f}%)")
         print(f" RSI / ATR : {r['rsi']:.1f} / {r['atr']:.2f}")
+    elif not r["filter_reason"]:
+        print(f" RSI / ATR : {r['rsi']:.1f} / {r['atr']:.2f}")
+    print(f" Session   : {'OK' if r['session_ok'] else 'OUT'} | ATR filter: {'OK' if r['vol_ok'] else 'BLOCK'}")
     print("=" * 55)
 
     state = load_state()
 
     if r["bias"] != "NONE":
-        # Whipsaw cooldown
         last_signal_ts_str = state.get("last_signal_ts")
         if last_signal_ts_str:
             try:
@@ -283,7 +343,6 @@ def main():
             except (ValueError, TypeError) as e:
                 print(f"[WARN] Could not parse last signal time: {e}")
 
-        # New signal?
         current_ts_str = r["ts"].strftime("%Y-%m-%dT%H:%M:%SZ") if hasattr(r["ts"], "strftime") else str(r["ts"])
         if current_ts_str != state.get("last_signal_ts") or r["bias"] != state.get("last_bias"):
             print("\n[INFO] New signal detected! Sending Telegram & Logging to CSV...")

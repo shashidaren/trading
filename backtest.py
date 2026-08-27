@@ -2,14 +2,13 @@
 """
 backtest.py — simple event-driven backtest of the gold signal rules
 
-Uses the exact same indicator & signal logic as gold_signal.py so results
-are consistent with live behaviour.
+Uses the same indicator & signal logic as gold_signal.py (including Phase A filters).
 
 Usage:
     python3 backtest.py
     python3 backtest.py --mode relaxed
     python3 backtest.py --mode strict --sl 1.5 --tp 2.5
-    python3 backtest.py --min-bars 300
+    python3 backtest.py --no-session --no-atr-filter
 """
 
 import os
@@ -34,6 +33,13 @@ RSI_OVERSOLD = 30
 DEFAULT_SL_ATR = 1.5
 DEFAULT_TP_ATR = 2.5
 
+# Phase A filters (same defaults as gold_signal.py)
+SESSION_START_UTC = 7
+SESSION_END_UTC = 21
+ATR_LOOKBACK = 100
+ATR_MIN_PCT = 20
+ATR_MAX_PCT = 95
+
 
 @dataclass
 class Trade:
@@ -45,7 +51,7 @@ class Trade:
     atr: float
     exit_ts: Optional[pd.Timestamp] = None
     exit_price: Optional[float] = None
-    outcome: Optional[str] = None  # WIN / LOSS / BE
+    outcome: Optional[str] = None
     r_multiple: Optional[float] = None
 
 
@@ -95,11 +101,29 @@ def add_indicators(df: pd.DataFrame) -> pd.DataFrame:
     pv = typical * volume
     df["vwap"] = pv.groupby(day).cumsum() / volume.groupby(day).cumsum()
 
+    df["atr_pctl"] = df["atr"].rolling(ATR_LOOKBACK, min_periods=20).apply(
+        lambda x: (x[-1] <= x).mean() * 100 if len(x) else np.nan,
+        raw=True,
+    )
     return df
 
 
-def signal_at(i: int, df: pd.DataFrame, mode: str) -> Optional[str]:
-    """Return 'BUY', 'SELL', or None for bar index i (needs i >= 1)."""
+def in_session(ts, use_session: bool) -> bool:
+    if not use_session:
+        return True
+    hour = ts.hour if hasattr(ts, "hour") else pd.Timestamp(ts).hour
+    return SESSION_START_UTC <= hour < SESSION_END_UTC
+
+
+def atr_ok(atr_pctl, use_atr: bool) -> bool:
+    if not use_atr:
+        return True
+    if pd.isna(atr_pctl):
+        return True
+    return ATR_MIN_PCT <= float(atr_pctl) <= ATR_MAX_PCT
+
+
+def signal_at(i: int, df: pd.DataFrame, mode: str, use_session: bool, use_atr: bool) -> Optional[str]:
     if i < 1:
         return None
 
@@ -107,6 +131,11 @@ def signal_at(i: int, df: pd.DataFrame, mode: str) -> Optional[str]:
     prev = df.iloc[i - 1]
 
     if pd.isna(last["ema_fast"]) or pd.isna(last["ema_slow"]) or pd.isna(last["rsi"]) or pd.isna(last["atr"]):
+        return None
+
+    if not in_session(last["ts"], use_session):
+        return None
+    if not atr_ok(last.get("atr_pctl"), use_atr):
         return None
 
     bull_cross = prev["ema_fast"] <= prev["ema_slow"] and last["ema_fast"] > last["ema_slow"]
@@ -125,7 +154,7 @@ def signal_at(i: int, df: pd.DataFrame, mode: str) -> Optional[str]:
             return "BUY"
         if bear_cross and rsi_ok_sell and vwap_confirms_sell:
             return "SELL"
-    else:  # relaxed
+    else:
         if trend_up and rsi_ok_buy and last["rsi"] > 50:
             return "BUY"
         if trend_down and rsi_ok_sell and last["rsi"] < 50:
@@ -139,19 +168,19 @@ def run_backtest(
     mode: str = "strict",
     sl_atr: float = DEFAULT_SL_ATR,
     tp_atr: float = DEFAULT_TP_ATR,
-    cooldown_bars: int = 3,  # ~15 min on 5m
+    cooldown_bars: int = 3,
+    use_session: bool = True,
+    use_atr: bool = True,
 ) -> List[Trade]:
     trades: List[Trade] = []
     open_trade: Optional[Trade] = None
     last_signal_i = -999
 
-    # Start after indicators are warm
-    start = max(EMA_SLOW, RSI_PERIOD, ATR_PERIOD) + 5
+    start = max(EMA_SLOW, RSI_PERIOD, ATR_PERIOD, 25) + 5
 
     for i in range(start, len(df)):
         bar = df.iloc[i]
 
-        # Manage open trade first
         if open_trade is not None:
             high = bar["high"]
             low = bar["low"]
@@ -166,7 +195,6 @@ def run_backtest(
                 hit_tp = low <= open_trade.tp
 
             if hit_sl and hit_tp:
-                # Conservative: same bar → LOSS
                 open_trade.outcome = "LOSS"
                 open_trade.exit_price = open_trade.sl
                 open_trade.r_multiple = -1.0
@@ -189,15 +217,13 @@ def run_backtest(
                 trades.append(open_trade)
                 open_trade = None
 
-            # If still open, don't take a new signal
             if open_trade is not None:
                 continue
 
-        # Look for new signal
         if i - last_signal_i < cooldown_bars:
             continue
 
-        bias = signal_at(i, df, mode)
+        bias = signal_at(i, df, mode, use_session, use_atr)
         if bias is None:
             continue
 
@@ -223,21 +249,30 @@ def run_backtest(
         )
         last_signal_i = i
 
-    # Leave any still-open trade unresolved (not counted)
     return trades
 
 
-def print_report(trades: List[Trade], mode: str, sl_atr: float, tp_atr: float, total_bars: int):
+def print_report(
+    trades: List[Trade],
+    mode: str,
+    sl_atr: float,
+    tp_atr: float,
+    total_bars: int,
+    use_session: bool,
+    use_atr: bool,
+):
     print("=" * 60)
     print(" BACKTEST REPORT — XAU/USD 5m")
     print("=" * 60)
     print(f" Mode              : {mode}")
     print(f" SL / TP (ATR)     : {sl_atr} / {tp_atr}")
+    print(f" Session filter    : {'ON' if use_session else 'OFF'} ({SESSION_START_UTC:02d}:00–{SESSION_END_UTC:02d}:00 UTC)")
+    print(f" ATR filter        : {'ON' if use_atr else 'OFF'} (pctl {ATR_MIN_PCT}–{ATR_MAX_PCT})")
     print(f" Bars tested       : {total_bars}")
     print(f" Total trades      : {len(trades)}")
 
     if not trades:
-        print("\nNo trades generated. Try --mode relaxed or more history.")
+        print("\nNo trades generated. Try --mode relaxed, disable filters, or more history.")
         print("=" * 60)
         return
 
@@ -261,7 +296,6 @@ def print_report(trades: List[Trade], mode: str, sl_atr: float, tp_atr: float, t
     else:
         print(" Profit Factor     : ∞")
 
-    # By direction
     for bias in ("BUY", "SELL"):
         subset = [t for t in trades if t.bias == bias]
         if not subset:
@@ -269,7 +303,6 @@ def print_report(trades: List[Trade], mode: str, sl_atr: float, tp_atr: float, t
         w = sum(1 for t in subset if t.outcome == "WIN")
         print(f" {bias:4s} trades      : {len(subset)}  (wins: {w}, win rate: {w/len(subset)*100:.0f}%)")
 
-    # Simple equity curve stats (in R)
     equity = np.cumsum(r_list)
     peak = np.maximum.accumulate(equity)
     dd = equity - peak
@@ -278,8 +311,7 @@ def print_report(trades: List[Trade], mode: str, sl_atr: float, tp_atr: float, t
     print(f" Final R           : {equity[-1]:+.2f}R" if len(equity) else " Final R           : 0.00R")
 
     print("=" * 60)
-    print("Note: This is a simplified backtest (no spread/slippage).")
-    print("Use it to compare rules, not as a guarantee of live results.")
+    print("Note: Simplified backtest (no spread/slippage). Compare rules, don't treat as guarantee.")
     print("=" * 60)
 
 
@@ -290,7 +322,12 @@ def main():
     parser.add_argument("--tp", type=float, default=DEFAULT_TP_ATR, help="TP ATR multiple")
     parser.add_argument("--min-bars", type=int, default=100)
     parser.add_argument("--cooldown", type=int, default=3, help="Min bars between new signals")
+    parser.add_argument("--no-session", action="store_true", help="Disable session filter")
+    parser.add_argument("--no-atr-filter", action="store_true", help="Disable ATR filter")
     args = parser.parse_args()
+
+    use_session = not args.no_session
+    use_atr = not args.no_atr_filter
 
     df = load_candles(min_bars=args.min_bars)
     df = add_indicators(df)
@@ -301,9 +338,11 @@ def main():
         sl_atr=args.sl,
         tp_atr=args.tp,
         cooldown_bars=args.cooldown,
+        use_session=use_session,
+        use_atr=use_atr,
     )
 
-    print_report(trades, args.mode, args.sl, args.tp, len(df))
+    print_report(trades, args.mode, args.sl, args.tp, len(df), use_session, use_atr)
 
 
 if __name__ == "__main__":
